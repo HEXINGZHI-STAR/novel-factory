@@ -1,0 +1,62 @@
+# 盘古V7.5 小说工厂 依赖清单
+# 开源集成：LiteLLM (MIT) + FAISS (MIT)
+#
+# 国内网络适配：
+#   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+#   或设置环境变量后安装：
+#   set PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+#   set HF_ENDPOINT=https://hf-mirror.com
+
+# === 核心依赖 ===
+flask>=3.0
+flask-cors>=4.0
+requests>=2.31
+
+# === 多模型路由（可选安装，未安装时自动HTTP回退）===
+# LiteLLM — 统一100+LLM供应商接口
+# 国内安装：pip install litellm -i https://pypi.tuna.tsinghua.edu.cn/simple
+litellm>=1.40
+
+# === 向量检索升级（可选安装，未安装时TF-IDF回退）===
+# FAISS CPU版本
+faiss-cpu>=1.7
+# 中文语义嵌入模型（118MB，首次自动下载到本地缓存）
+sentence-transformers>=2.7
+
+# === 国内模型镜像（可选，解决 HuggingFace 无法访问）===
+# ModelScope SDK — 阿里开源模型库，国内直接下载语义模型
+# pip install modelscope -i https://pypi.tuna.tsinghua.edu.cn/simple
+# modelscope>=1.14
+
+# === 网页抓取 ===
+beautifulsoup4>=4.12
+
+# === 数据分析 ===
+numpy>=1.24
+
+# === 文档生成（可选） ===
+python-docx>=1.1
+
+# === 【新增】基础增强依赖 ===
+# 中文分词（提升RAG精度）
+jieba>=0.42.1
+
+# 数据库ORM
+sqlalchemy>=2.0.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
+# 进度条和日志
+tqdm>=4.65.0
+loguru>=0.7.0
+rich>=13.0.0
+
+# Web界面（强烈推荐！）
+gradio>=4.0.0
+
+# === 【可选】更强大的向量数据库 ===
+# chromadb>=0.4.0
+
+# === 【可选】LLM应用框架 ===
+# langchain>=0.1.0

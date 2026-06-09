@@ -1,0 +1,23 @@
+{
+  "project_info": {
+    "title": "镇妖司：新科状元",
+    "genre": "玄幻",
+    "platform": "qimao",
+    "target_chapters": 100,
+    "target_words": 200000,
+    "concept": "新科状元被贬镇妖司，以读书人的逻辑杀妖，以朝堂的谋略破局",
+    "created_at": "2026-06-08 17:03:51",
+    "chapters_per_volume": 25
+  },
+  "progress": {
+    "current_chapter": 5,
+    "total_words": 15321
+  },
+  "volume_plan": {
+    "volume_1": "入局卷：查灭门案→发现妖盟→首杀将级(1-18章)",
+    "volume_2": "破局卷：追查幕后→权力绞杀→金手指真相(19-36章)",
+    "volume_3": "反杀卷：朝廷内乱→残部反攻→身世之谜(37-54章)",
+    "volume_4": "定鼎卷：直面黑手→策反朝堂→斩杀天妖(55-72章)"
+  },
+  "pipeline_version": "1.0"
+}

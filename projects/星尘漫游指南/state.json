@@ -1,0 +1,21 @@
+{
+  "project_info": {
+    "title": "星尘漫游指南",
+    "genre": "科幻",
+    "platform": "番茄",
+    "target_words": 30000,
+    "target_chapters": 20,
+    "created_at": "2026-06-07 20:05:50"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 600
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "主角在太空空间站醒来",
+      "target_words": 3000,
+      "created_at": "2026-06-07 20:05:50"
+    }
+  }
+}

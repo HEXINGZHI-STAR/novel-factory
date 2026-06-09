@@ -1,0 +1,17 @@
+{
+  "module_id": "general_w1_setup",
+  "name": "通用·设定预处理",
+  "version": "1.0",
+  "workshop": "w1",
+  "source_mode": "general",
+  "description": "标准网文设定提取——通用题材，无特殊风格约束",
+  "focus": "本章剧情推进 + 人物出场 + 核心矛盾",
+  "extra_fields": [
+    "本章主线任务（1句话）",
+    "出场人物及当前状态",
+    "本章场景（最多3个）",
+    "近3章伏笔状态",
+    "本章禁用设定/人物"
+  ],
+  "compatible_styles": ["general", "urban", "fantasy", "sci-fi", "historical"]
+}

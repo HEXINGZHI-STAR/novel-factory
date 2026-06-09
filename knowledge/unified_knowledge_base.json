@@ -1,0 +1,263 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-04",
+  "name": "盘古统一知识库",
+  "note": "整合情绪锚点库、钩子系统、平台配置为机器可读的JSON格式，供W1-W4车间和W5情绪工程车间检索使用。支持按模式、按平台、按情绪类型查询。",
+
+  "emotion_anchors": {
+    "description": "情绪价值锚点库 — 6大类60个高频情绪触发器",
+    "categories": {
+      "emotional_compensation": {
+        "name": "情绪代偿型",
+        "logic": "替读者出气：读者在现实生活中受的气，在小说里让主角替他们出",
+        "anchors": [
+          {"id": "EC-01", "name": "领导PUA反击", "trigger": "主角被领导当众羞辱", "method": "主角用专业能力/证据让领导当场下不来台", "reader_reaction": "爽！我也想这么干！", "suitable_modes": ["urban_power", "general", "female_solo"], "suitable_platforms": ["fanqie", "qimao"]},
+          {"id": "EC-02", "name": "房东催租反杀", "trigger": "房东涨租/赶人", "method": "主角亮出新合同/房产证明/法律条款", "reader_reaction": "终于不用受房东气了", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EC-03", "name": "亲戚吸血断绝", "trigger": "极品亲戚借钱/道德绑架", "method": "主角当场算账，一笔笔算清人情债，宣布断绝来往", "reader_reaction": "这亲戚我也想要这样的结局", "suitable_modes": ["urban_power", "general", "female_solo"], "suitable_platforms": ["fanqie", "qimao"]},
+          {"id": "EC-04", "name": "同事抢功揭穿", "trigger": "同事在会议上抢了主角的功劳", "method": "主角平静地拿出时间戳/邮件记录/客户反馈", "reader_reaction": "太解气了", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EC-05", "name": "前任回头拒绝", "trigger": "前任后悔回头求复合", "method": "主角已经过得更好，礼貌但冰冷地拒绝", "reader_reaction": "迟来的深情比草贱", "suitable_modes": ["female_solo", "romance", "general"], "suitable_platforms": ["fanqie", "jinjiang"]},
+          {"id": "EC-06", "name": "客户刁难打脸", "trigger": "客户用无理要求刁难主角", "method": "主角用更高维度的专业方案让客户闭嘴并道歉", "reader_reaction": "专业就是底气", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie", "qimao"]},
+          {"id": "EC-07", "name": "网暴反噬", "trigger": "主角被网络暴力/谣言中伤", "method": "主角用事实和法律让造谣者付出代价", "reader_reaction": "键盘侠就该这个下场", "suitable_modes": ["urban_power", "general", "female_solo"], "suitable_platforms": ["fanqie", "qimao"]},
+          {"id": "EC-08", "name": "势利眼翻车", "trigger": "服务员/保安看衣识人，歧视主角", "method": "主角的真实身份揭露，势利眼当场变脸", "reader_reaction": "狗眼看人低", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EC-09", "name": "渣男现形", "trigger": "渣男在公开场合暴露真面目", "method": "女主提前布好局，让所有人在场见证", "reader_reaction": "手撕渣男就是爽", "suitable_modes": ["female_solo", "romance"], "suitable_platforms": ["fanqie", "jinjiang"]},
+          {"id": "EC-10", "name": "校园霸凌清算", "trigger": "曾经霸凌主角的人再次出现", "method": "主角用现在的地位/能力让对方付出代价", "reader_reaction": "童年阴影终于治愈了", "suitable_modes": ["urban_power", "general", "female_solo"], "suitable_platforms": ["fanqie"]}
+        ]
+      },
+      "stress_relief": {
+        "name": "解压释放型",
+        "logic": "让读者呼吸：在极度紧张/压抑后，给读者一个释放的缺口",
+        "anchors": [
+          {"id": "ED-01", "name": "大雨中的独处", "trigger": "主角经历重大事件后", "method": "一场大雨，主角站在窗前，什么都不做，只是呼吸", "reader_reaction": "我也需要这样的时刻", "suitable_modes": ["healing_life", "romance", "general", "urban_power"], "suitable_platforms": ["jinjiang", "qidian"]},
+          {"id": "ED-02", "name": "深夜一碗面", "trigger": "主角加班/战斗/逃命后", "method": "一碗简单的热汤面，具体的食材描写，吃完后的满足感", "reader_reaction": "看饿了，但心里暖了", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "ED-03", "name": "断舍离", "trigger": "主角扔掉/烧毁过去的物品", "method": "具体的物品清单，每件物品背后的记忆，扔掉时的决绝", "reader_reaction": "我也想扔东西", "suitable_modes": ["female_solo", "romance", "general"], "suitable_platforms": ["jinjiang"]},
+          {"id": "ED-04", "name": "关机时刻", "trigger": "主角关掉手机/切断所有联系", "method": "屏幕暗下去的声音，世界安静了，主角闭上眼睛", "reader_reaction": "关机就是最大的自由", "suitable_modes": ["urban_power", "general", "healing_life"], "suitable_platforms": ["jinjiang", "qidian"]},
+          {"id": "ED-05", "name": "整理房间", "trigger": "主角在混乱后整理自己的空间", "method": "具体的整理动作，东西归位后的心情变化", "reader_reaction": "整理房间就是整理心情", "suitable_modes": ["healing_life", "general"], "suitable_platforms": ["jinjiang"]},
+          {"id": "ED-06", "name": "无名之笑", "trigger": "主角在绝境中突然笑出声", "method": "没有理由，就是觉得荒谬而笑，笑完继续干", "reader_reaction": "笑着笑着就哭了", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "ED-07", "name": "宠物/植物陪伴", "trigger": "主角和宠物/植物的互动", "method": "没有台词，只有抚摸、喂食、观察生长的细节", "reader_reaction": "被治愈了", "suitable_modes": ["healing_life", "general"], "suitable_platforms": ["jinjiang"]},
+          {"id": "ED-08", "name": "旧物重逢", "trigger": "主角意外找到童年/过去的某件物品", "method": "物品的具体触感、气味，回忆闪回，但主角已经不一样了", "reader_reaction": "时光流逝，但我还在", "suitable_modes": ["*"], "suitable_platforms": ["jinjiang", "qidian"]},
+          {"id": "ED-09", "name": "日出/日落凝视", "trigger": "主角在重大决定前看天", "method": "具体的颜色变化、温度变化、城市声音的变化", "reader_reaction": "新的一天开始了", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "ED-10", "name": "洗澡的仪式感", "trigger": "主角洗去身上的污渍/血迹/疲惫", "method": "水温、泡沫、水流声，洗完后镜中的自己", "reader_reaction": "好像我也洗了个澡", "suitable_modes": ["*"], "suitable_platforms": ["*"]}
+        ]
+      },
+      "resonance_healing": {
+        "name": "共鸣治愈型",
+        "logic": "让读者觉得被理解：让读者觉得'原来不止我一个人这样'",
+        "anchors": [
+          {"id": "EK-01", "name": "成年人的崩溃静音", "trigger": "主角遇到打击，但不能哭出声", "method": "咬着嘴唇、指甲掐进掌心、去洗手间开水龙头掩盖哭声", "reader_reaction": "是我", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EK-02", "name": "假装没事", "trigger": "主角刚经历痛苦，面对朋友时装作正常", "method": "笑着说'没事'，但某个小动作暴露了", "reader_reaction": "我每天都这样", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EK-03", "name": "看到父母的白发", "trigger": "主角注意到父母的衰老细节", "method": "具体的白发位置、动作变慢、忘记事情的瞬间", "reader_reaction": "该多陪陪他们了", "suitable_modes": ["*"], "suitable_platforms": ["jinjiang", "qidian"]},
+          {"id": "EK-04", "name": "朋友圈的孤独", "trigger": "主角刷到朋友们的热闹动态", "method": "自己躺在黑暗中，手机屏幕是唯一的光，然后关掉", "reader_reaction": "热闹是他们的", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["jinjiang"]},
+          {"id": "EK-05", "name": "加班后的末班车", "trigger": "主角深夜独自回家", "method": "空荡的车厢、窗外的灯光、手机电量不足", "reader_reaction": "这就是我的生活", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie", "jinjiang"]},
+          {"id": "EK-06", "name": "未发送的消息", "trigger": "主角打了一大段话，然后一个个删掉", "method": "输入框里的文字从满到空，最后发了句'好的'", "reader_reaction": "每次想表达最后都算了", "suitable_modes": ["romance", "healing_life", "female_solo"], "suitable_platforms": ["jinjiang"]},
+          {"id": "EK-07", "name": "房间里的回声", "trigger": "主角回到空荡的家，喊了一声", "method": "回声的具体质感，然后主角笑了或哭了", "reader_reaction": "孤独有声", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EK-08", "name": "习惯性省钱", "trigger": "主角有钱后，仍下意识选择便宜选项", "method": "具体的消费场景，选完后的自嘲", "reader_reaction": "穷怕了，改不掉", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EK-09", "name": "对陌生人的善意", "trigger": "主角在自身难保时，仍帮助陌生人", "method": "微小的帮助，对方的一句谢谢", "reader_reaction": "世界上还有好人", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EK-10", "name": "噩梦惊醒后的确认", "trigger": "主角从噩梦中醒来", "method": "摸床头的水杯、确认门是锁的、打开灯，重新躺下", "reader_reaction": "幸好是梦", "suitable_modes": ["*"], "suitable_platforms": ["*"]}
+        ]
+      },
+      "intelligence_superiority": {
+        "name": "智商优越感型",
+        "logic": "让读者觉得自己很聪明：给读者足够的线索，让他们比角色早一步猜到",
+        "anchors": [
+          {"id": "EI-01", "name": "伏笔早现", "trigger": "第3章的细节，第30章成为关键", "method": "前文中不经意的物品/对话，后文回收时让读者恍然大悟", "reader_reaction": "原来前面早就埋了！", "suitable_modes": ["rule_mystery", "history_scholar", "folk_horror"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-02", "name": "规则反推", "trigger": "读者可以根据已有规则推导出隐藏规则", "method": "给足信息，让读者参与解谜", "reader_reaction": "我猜对了！", "suitable_modes": ["rule_mystery", "folk_horror"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-03", "name": "多重反转", "trigger": "以为A是坏人，结果是B，最后发现是C", "method": "每次反转都有前文的线索支撑", "reader_reaction": "这剧情太牛了", "suitable_modes": ["rule_mystery", "folk_horror", "history_scholar"], "suitable_platforms": ["qidian", "fanqie"]},
+          {"id": "EI-04", "name": "知识调用", "trigger": "主角用读者也知道的冷知识破局", "method": "具体的知识点，读者会产生'我也知道'的参与感", "reader_reaction": "这个知识点我知道！", "suitable_modes": ["history_scholar", "urban_power"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-05", "name": "信息不对称", "trigger": "读者知道但角色不知道的关键信息", "method": "制造'你快跑啊他就在你后面'的紧张感", "reader_reaction": "急死我了但我知道", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EI-06", "name": "逻辑闭环", "trigger": "看似无关的支线，最终完美汇入主线", "method": "展示全局架构的精密", "reader_reaction": "这结构太漂亮了", "suitable_modes": ["rule_mystery", "history_scholar"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-07", "name": "语言陷阱", "trigger": "对话中的双关/暗示/陷阱", "method": "角色A的话表面是X，实际是Y，角色B没听懂但读者懂了", "reader_reaction": "话里有话", "suitable_modes": ["history_scholar", "female_solo"], "suitable_platforms": ["qidian", "jinjiang"]},
+          {"id": "EI-08", "name": "镜像结构", "trigger": "两个情节在结构上对称，但结果相反", "method": "让读者自己发现这种对称", "reader_reaction": "前后呼应绝了", "suitable_modes": ["*"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-09", "name": "错误引导", "trigger": "作者故意引导读者往A想，实际是B", "method": "误导的线索和真实的线索同时存在", "reader_reaction": "我一开始就觉得不对劲", "suitable_modes": ["rule_mystery", "folk_horror"], "suitable_platforms": ["qidian"]},
+          {"id": "EI-10", "name": "极限破局", "trigger": "主角在绝境中用匪夷所思但逻辑自洽的方式逃生", "method": "每一步都有合理性，组合起来超出想象", "reader_reaction": "这都能行？！", "suitable_modes": ["*"], "suitable_platforms": ["fanqie", "qidian"]}
+        ]
+      },
+      "cultural_pride": {
+        "name": "文化自豪感型",
+        "logic": "让读者为中华文明骄傲：通过具体的文化细节唤起文化认同",
+        "anchors": [
+          {"id": "ECU-01", "name": "非遗技艺展现", "trigger": "主角展示某种传统技艺", "method": "具体的工序、工具、口诀", "reader_reaction": "文化自信拉满", "suitable_modes": ["folk_horror", "history_scholar"], "suitable_platforms": ["qidian", "jinjiang"]},
+          {"id": "ECU-02", "name": "古诗词破局", "trigger": "主角用一句古诗词化解危机", "method": "在关键时刻，那句诗就是最优解", "reader_reaction": "这就是中文之美", "suitable_modes": ["history_scholar", "general"], "suitable_platforms": ["qidian"]},
+          {"id": "ECU-03", "name": "传统饮食仪式", "trigger": "具体的传统食物制作过程", "method": "从选材到烹饪到摆盘，每个细节都是文化", "reader_reaction": "看饿了，更骄傲了", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "ECU-04", "name": "古代科技领先", "trigger": "展示中国古代某项科技曾领先世界", "method": "具体的数据、对比、应用场景", "reader_reaction": "原来我们早就有", "suitable_modes": ["history_scholar"], "suitable_platforms": ["qidian"]},
+          {"id": "ECU-05", "name": "方言魅力", "trigger": "用方言解决误会/传递暗号", "method": "方言的语音特点、地域文化背景", "reader_reaction": "家乡话就是亲切", "suitable_modes": ["folk_horror", "general"], "suitable_platforms": ["*"]},
+          {"id": "ECU-06", "name": "书法/绘画意境", "trigger": "通过书画传达无法言说的信息", "method": "具体的笔触、留白、意境", "reader_reaction": "只有中国人懂", "suitable_modes": ["history_scholar"], "suitable_platforms": ["qidian", "jinjiang"]},
+          {"id": "ECU-07", "name": "中医药理", "trigger": "用中医理论治病/解毒/养生", "method": "具体的药材、配伍原理、脉象描述", "reader_reaction": "中医不是玄学", "suitable_modes": ["history_scholar", "general"], "suitable_platforms": ["qidian"]},
+          {"id": "ECU-08", "name": "节气生活", "trigger": "故事发展与二十四节气同步", "method": "每个节气的具体习俗、食物、气候变化", "reader_reaction": "我们的时间美学", "suitable_modes": ["healing_life", "history_scholar"], "suitable_platforms": ["jinjiang"]},
+          {"id": "ECU-09", "name": "古建筑智慧", "trigger": "利用古建筑的结构特点破局", "method": "榫卯、斗拱、风水布局的具体应用", "reader_reaction": "老祖宗的智慧", "suitable_modes": ["history_scholar", "folk_horror"], "suitable_platforms": ["qidian"]},
+          {"id": "ECU-10", "name": "民俗仪式力量", "trigger": "传统民俗仪式在关键时刻发挥作用", "method": "不是迷信，而是文化心理的集体力量", "reader_reaction": "仪式感就是力量", "suitable_modes": ["folk_horror", "history_scholar"], "suitable_platforms": ["qidian", "fanqie"]}
+        ]
+      },
+      "anti_involution": {
+        "name": "反内卷爽感型",
+        "logic": "奖励摸鱼/摆烂/拒绝加班：在全民内卷的时代，读者需要看到'不卷也能赢'的幻想代偿",
+        "anchors": [
+          {"id": "EA-01", "name": "摸鱼反而升职", "trigger": "主角拒绝无意义加班，专注核心工作", "method": "同事996累垮，主角准时下班但业绩最好", "reader_reaction": "我也想这样", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-02", "name": "摆烂吓退对手", "trigger": "主角在竞争中说'我不玩了'", "method": "对手反而慌了，因为主角的退出让游戏规则崩塌", "reader_reaction": "以退为进", "suitable_modes": ["female_solo", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-03", "name": "拒绝道德绑架", "trigger": "面对'年轻人要多吃苦'的PUA", "method": "主角平静地算时薪，反问'您时薪多少'", "reader_reaction": "怼得太漂亮了", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-04", "name": "系统奖励躺平", "trigger": "金手指的触发条件是'休息/睡觉/发呆'", "method": "别人拼命修炼，主角睡觉变强", "reader_reaction": "这才是我要的系统", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-05", "name": "降维打击内卷", "trigger": "所有人拼命争的东西，主角轻松获得", "method": "不是主角多努力，而是方向对了/维度高了", "reader_reaction": "选择大于努力", "suitable_modes": ["*"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-06", "name": "辞职即巅峰", "trigger": "主角辞职后，原公司/行业才发现他的价值", "method": "前老板求他回去，他已经在更好的地方", "reader_reaction": "离开错的人才能幸福", "suitable_modes": ["urban_power", "general", "female_solo"], "suitable_platforms": ["fanqie"]},
+          {"id": "EA-07", "name": "极简主义胜利", "trigger": "主角用最少资源达成最大效果", "method": "别人堆砌资源，主角找到关键支点", "reader_reaction": "少即是多", "suitable_modes": ["*"], "suitable_platforms": ["*"]},
+          {"id": "EA-08", "name": "反消费主义", "trigger": "主角拒绝奢侈品/身份符号，用实力说话", "method": "穿布衣见穿名牌的对手，用专业能力碾压", "reader_reaction": "真正的底气不需要logo", "suitable_modes": ["urban_power", "history_scholar"], "suitable_platforms": ["fanqie", "qidian"]},
+          {"id": "EA-09", "name": "睡眠正义", "trigger": "主角坚持睡满8小时，反而状态最好", "method": "具体描写睡眠后的清醒感，对比熬夜者的萎靡", "reader_reaction": "我要早睡", "suitable_modes": ["healing_life", "general"], "suitable_platforms": ["*"]},
+          {"id": "EA-10", "name": "边界感获胜", "trigger": "主角明确说'这不归我管/下班不谈工作'", "method": "初期被认为'不合群'，最后因边界感获得尊重", "reader_reaction": "学会说不", "suitable_modes": ["urban_power", "general"], "suitable_platforms": ["fanqie"]}
+        ]
+      }
+    },
+    "platform_emotion_preferences": {
+      "fanqie": {"priority": ["emotional_compensation", "anti_involution", "intelligence_superiority"], "delivery": "直给", "forbidden": ["延迟满足", "过度留白"]},
+      "qidian": {"priority": ["intelligence_superiority", "cultural_pride", "resonance_healing"], "delivery": "延迟爆发", "forbidden": ["情绪单一", "无层次感"]},
+      "qimao": {"priority": ["emotional_compensation", "stress_relief", "resonance_healing"], "delivery": "极致浓烈", "forbidden": ["克制含蓄"]},
+      "jinjiang": {"priority": ["resonance_healing", "stress_relief", "intelligence_superiority"], "delivery": "细腻渗透", "forbidden": ["直给粗暴"]}
+    },
+    "emotion_checklist": [
+      "本章是否包含至少1个情绪代偿型锚点？（替读者出气）",
+      "本章是否包含至少1个解压释放型锚点？（让读者呼吸）",
+      "本章是否包含至少1个共鸣治愈型锚点？（让读者觉得被理解）",
+      "智商向作品：是否包含至少1个智商优越感型锚点？",
+      "历史/民俗作品：是否包含至少1个文化自豪感型锚点？",
+      "都市/职场作品：是否包含至少1个反内卷爽感型锚点？",
+      "情绪曲线是否波动？（不能一直是高压或一直是平淡）",
+      "章末情绪是'上扬'还是'悬置'？是否符合目标平台要求？"
+    ]
+  },
+
+  "hook_system": {
+    "description": "钩子系统 — 七种钩子类型 + 密度规则 + 各模式偏好",
+    "core_principle": "黄金三章已死，黄金三钩当立",
+    "density_rules": {
+      "first_hook": {"position": "前300字", "count": 1, "purpose": "决定读者是否继续"},
+      "mid_hook": {"position": "全文均匀分布", "density": "每500-800字1个", "purpose": "防止阅读疲劳"},
+      "chapter_end_hook": {"position": "最后100字", "count": 1, "purpose": "决定追读率"},
+      "cross_chapter_hook": {"requirement": "本章结尾↔下章开头必须呼应", "purpose": "制造'停不下来'的惯性"}
+    },
+    "chapter_template_1500": {
+      "0-150字": "首钩：异常事件/冲突爆发",
+      "150-400字": "推进，铺垫",
+      "400-600字": "章中钩1：新信息/小反转",
+      "600-900字": "核心剧情",
+      "900-1100字": "章中钩2：危机升级/新悬念",
+      "1100-1300字": "高潮/爽点释放",
+      "1300-1500字": "章尾钩：强悬念收尾"
+    },
+    "hook_types": [
+      {
+        "id": "suspense",
+        "name": "悬念钩",
+        "definition": "让读者产生'到底怎么回事'的求知欲",
+        "trigger_words": ["但", "然而", "奇怪的是", "没人注意到"],
+        "examples": [
+          "她按照规则熄灭了蜡烛，但窗外的月光下，她看见自己的影子——多了一个。",
+          "到账提示音响起：+1000000。但发送人是一串乱码。"
+        ],
+        "universal": true,
+        "best_for_modes": ["rule_mystery", "urban_power", "folk_horror"]
+      },
+      {
+        "id": "conflict",
+        "name": "冲突钩",
+        "definition": "直接呈现对立双方的激烈碰撞",
+        "trigger_words": ["摔", "砸", "推", "撕", "吼"],
+        "examples": [
+          "领导把一杯咖啡泼在他脸上：'你一个外包，也配提方案？'",
+          "她把和离书拍在桌上，在满堂男人的惊愕中转身离开。"
+        ],
+        "best_for_modes": ["urban_power", "female_solo"],
+        "best_for_platforms": ["fanqie", "qimao"]
+      },
+      {
+        "id": "emotional",
+        "name": "情感钩",
+        "definition": "触发读者的强烈情绪反应（愤怒、心酸、温暖、恐惧）",
+        "technique": "具体的感官细节+情绪反差",
+        "examples": [
+          "为了祝贺男友考公结束，我特意请了半天假，在厨房里忙活了半天准备庆功宴。（后接背叛reveal）",
+          "他把外套还给她，口袋里还留着她的发圈——他没发现，她也没说。"
+        ],
+        "best_for_modes": ["romance", "healing_life"],
+        "best_for_platforms": ["jinjiang", "qimao"]
+      },
+      {
+        "id": "crisis",
+        "name": "危机钩",
+        "definition": "主角面临具体、紧迫的生存/地位/情感威胁",
+        "technique": "时间限制、倒计时、不可逆后果",
+        "examples": [
+          "第三条规定：如果听到有人叫你的名字，不要回答。但那个声音，是她自己的。",
+          "史书上只记载了'某年大疫，死者数十万'。而此刻，主角站在疫区边缘。"
+        ],
+        "best_for_modes": ["rule_mystery", "urban_power", "history_scholar"]
+      },
+      {
+        "id": "reversal",
+        "name": "反转钩",
+        "definition": "读者和角色的认知被同时颠覆",
+        "trigger_words": ["原来", "没想到", "直到……才发现"],
+        "examples": [
+          "满朝文武等着看她笑话，她却从袖中取出一本账册。三天后，三个尚书下了狱。",
+          "敌将以为自己赢定了，因为他比主角多三倍兵力。但他不知道，主角在前天晚上，已经让人把上游的水坝挖开了。"
+        ],
+        "best_for_modes": ["female_solo", "history_scholar"]
+      },
+      {
+        "id": "anticipation",
+        "name": "期待钩",
+        "definition": "让读者对即将发生的事产生强烈期待",
+        "technique": "预告、铺垫后的'即将'、能力解锁前兆",
+        "examples": [
+          "他还没来得及笑，手机弹出一条系统提示：【副作用触发】",
+          "客户接过修好的车钥匙，满脸不屑。主角没说话，只是按下了启动键。"
+        ],
+        "best_for_modes": ["urban_power", "general"],
+        "best_for_platforms": ["fanqie", "qidian"]
+      },
+      {
+        "id": "revelation",
+        "name": "揭秘钩",
+        "definition": "部分揭示隐藏信息，但引出更大的谜团",
+        "trigger_words": ["终于", "原来如此", "但这也意味着"],
+        "examples": [
+          "他发现规则书上的墨水在流动，昨天的第三条，今天变成了完全不同的内容。",
+          "她把地图展开——上面标注的，是使臣通敌的全部证据。但地图的角落里，还有一个她从未见过的印章。"
+        ],
+        "best_for_modes": ["rule_mystery", "history_scholar", "folk_horror"]
+      }
+    ],
+    "mode_hook_preferences": {
+      "urban_power": {"preferred": ["conflict", "anticipation", "crisis"], "forbidden": ["emotional"], "note": "每个钩子必须带'现实锚点'"},
+      "female_solo": {"preferred": ["conflict", "reversal", "anticipation"], "forbidden": ["emotional"], "note": "钩子必须体现'性别突破'或'权力升级'"},
+      "history_scholar": {"preferred": ["revelation", "crisis", "reversal"], "forbidden": ["conflict"], "note": "钩子必须带'知识增量'"},
+      "rule_mystery": {"preferred": ["suspense", "crisis", "revelation"], "forbidden": ["anticipation"], "note": "钩子必须和规则系统相关"},
+      "romance": {"preferred": ["emotional", "anticipation", "reversal"], "forbidden": ["crisis"], "note": "钩子必须推进情感关系"},
+      "folk_horror": {"preferred": ["suspense", "crisis", "revelation"], "forbidden": ["conflict"], "note": "钩子必须用日常细节包装异常"},
+      "healing_life": {"preferred": ["emotional", "anticipation"], "forbidden": ["crisis", "suspense"], "note": "钩子必须温暖，不能焦虑"}
+    },
+    "hook_quality_checklist": [
+      "前300字是否有钩子？（没有=重写）",
+      "章中是否有至少2个小钩子？（没有=补充）",
+      "章尾是否有强钩子？（没有=重写）",
+      "本章钩子是否与下章开头形成呼应？（没有=调整）",
+      "钩子类型是否单一？（全是悬念=乏味，需要混搭）",
+      "钩子是否可预测？（读者提前猜到=失败）",
+      "钩子是否和主角目标直接相关？（无关=删除）",
+      "读完本章，读者是否必须在5秒内点击下一章？（否=加强钩子）"
+    ],
+    "common_errors": [
+      {"name": "假钩子", "example": "他不知道，这将改变他的一生。", "problem": "太笼统", "fix": "他不知道，那枚硬币的正面和反面，刻着两条完全相反的规则。"},
+      {"name": "泄气钩子", "example": "主角终于打败了反派，一切归于平静。", "problem": "没有引出新冲突", "fix": "主角终于打败了反派，但反派临死前笑着说：'你以为，只有我一个吗？'"},
+      {"name": "延迟钩子", "example": "明天，可能会有大事发生。", "problem": "不够紧迫", "fix": "手机屏幕亮了，一条消息：【距离规则生效，还剩3分钟】。"},
+      {"name": "信息重复", "example": "章尾说'他发现了一个秘密'，下章开头重复同一句话", "problem": "浪费期待感", "fix": "章尾直接给一半信息，下章开头给另一半+新的钩子"}
+    ]
+  },
+
+  "platform_profiles": {
+    "description": "平台写作配置文件 — 每个平台的专属创作规则",
+    "profiles_path": "platform_writing_profiles.json",
+    "summary": {
+      "fanqie": {"core": "算法推荐+拉新向", "metric": "完读率/追读率", "length": "1500±50字", "hook": "前300字出冲突", "emotion": "直给型，每500字1小爽点"},
+      "qidian": {"core": "付费订阅+粉丝经济", "metric": "均订/月票", "length": "2000-3000字", "hook": "前三章建立世界观期待", "emotion": "延迟爆发型"},
+      "qimao": {"core": "免费阅读+新媒体向", "metric": "留存率/完读率", "length": "1500-2000字", "hook": "前500字完成冲突+人设+悬念闭环", "emotion": "极致浓烈型"},
+      "jinjiang": {"core": "女性付费+IP向", "metric": "收藏/评论/霸王票", "length": "2000-4000字", "hook": "前2000字建立人设与情绪钩", "emotion": "细腻渗透型"}
+    }
+  }
+}

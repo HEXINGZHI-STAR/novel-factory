@@ -1,0 +1,26 @@
+# 《逻辑之下》封面设计提示词
+
+## Midjourney英文版（推荐）
+
+A young Chinese man in washed-out blue scholar robes standing in front of a cracked ancient bronze mirror inside a dark traditional Chinese mansion courtyard. The mirror's reflection shows NOT him -- it shows a grinning twisted version of himself reaching toward him. Behind him, a frightened young woman in simple grey robes clutches his sleeve. White plum blossom petals fall through the darkness. Cyan ghostly lanterns flicker along a wooden corridor. The atmosphere is tense, mysterious, intellectual horror. Chinese ink painting style meets dark fantasy. Cinematic lighting, volumetric fog, 8K --ar 2:3 --v 6.1
+
+---
+
+## Midjourney简洁版
+
+Chinese dark fantasy cover art. A bronze mirror in an ancient courtyard. A man in blue robes vs his twisted mirror reflection reaching out to grab him. Plum blossoms in darkness. Cyan ghost lights. Ink wash painting meets thriller cinema. --ar 2:3 --v 6.1
+
+---
+
+## Stable Diffusion版
+
+masterpiece, best quality, 1boy, Chinese ancient scholar, blue robes, standing before cracked bronze mirror, mirror reflection showing twisted evil version, dark traditional courtyard, plum blossom petals, cyan lanterns, fog, tense atmosphere, ink painting style, cinematic lighting, volumetric lighting, 8k
+
+---
+
+## DALL-E中文版
+
+一幅中国暗黑幻想风格的小说封面。画面中央是一名穿着灰白青色长衫的年轻男子，站在一面古老的青铜镜前。镜中映出的不是他——而是一个嘴角裂到耳根的扭曲版本，正伸手要抓他。背景是一座黑暗的中式宅院，白色梅花瓣从黑暗中落下，廊下挂着青色灯笼。整体氛围紧张、阴冷、智性恐怖。水墨画风融合电影质感。
+
+---
+

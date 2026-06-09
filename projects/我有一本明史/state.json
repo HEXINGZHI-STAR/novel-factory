@@ -1,0 +1,15 @@
+{
+  "project_info": {
+    "title": "我有一本明史",
+    "genre": "历史",
+    "platform": "qimao",
+    "concept": "历史老师穿越到明朝正德年间附身一个被贬小官，脑子里记得整本明史。他知道每个权臣的结局、每场政变的走向、甚至正德皇帝何时落水而死——但他不知道如何在这个时代活下去，更不知道改变历史要付出什么代价。",
+    "target_chapters": 12,
+    "created_at": "2026-06-08 16:43:31"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 4654
+  },
+  "pipeline_version": "1.0"
+}

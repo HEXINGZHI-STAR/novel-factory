@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "title": "生命倒计时7天",
+    "type": "中篇",
+    "genre": "urban_power",
+    "platform": "qimao",
+    "target_words": 40000,
+    "target_chapters": 20,
+    "created_at": "2026-06-08 12:00:00"
+  },
+  "progress": {
+    "current_chapter": 5,
+    "total_words": 10000
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "头上的倒计时！我只有7天了？",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    },
+    "chapter_2": {
+      "task": "生命眼！能看到别人的生命值",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    },
+    "chapter_3": {
+      "task": "第一次救胖子！但差点暴露",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    },
+    "chapter_4": {
+      "task": "苏晴的异常！她的倒计时也在变",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    },
+    "chapter_5": {
+      "task": "影子的警告！有人在收命",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    }
+  },
+  "references": [774, 775, 776]
+}

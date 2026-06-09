@@ -1,0 +1,113 @@
+{
+  "name": "盘古V7.5 写作模型模块库",
+  "description": "可插拔车间模块——用户可自由组合不同风格的车间配置",
+  "version": "2.1",
+  "modules": {
+    "w0": [
+      {
+        "id": "healing_w0_anchor",
+        "file": "w0_healing_anchor.json",
+        "name": "治愈系·主旨锚定",
+        "description": "锁定核心主旨——找到「读者合上书后带走的感受」",
+        "best_for": ["治愈系", "生活流", "文学性作品"]
+      }
+    ],
+    "w1": [
+      {
+        "id": "healing_w1_setup",
+        "file": "w1_healing_setup.json",
+        "name": "治愈系·设定预处理",
+        "description": "情绪释放设计前置——五感排布+释放节点+物件流转",
+        "best_for": ["治愈系", "生活流", "文学性作品"]
+      },
+      {
+        "id": "general_w1_setup",
+        "file": "w1_general_setup.json",
+        "name": "通用·设定预处理",
+        "description": "标准网文设定提取——剧情推进+人物出场+核心矛盾",
+        "best_for": ["都市", "玄幻", "科幻", "历史"]
+      }
+    ],
+    "w2": [
+      {
+        "id": "healing_w2_draft",
+        "file": "w2_healing_draft.json",
+        "name": "治愈系·正文初稿",
+        "description": "电影镜头式动作描写——对话是情绪载体不是信息载体",
+        "best_for": ["治愈系", "生活流", "文学性作品"]
+      },
+      {
+        "id": "general_w2_draft",
+        "file": "w2_general_draft.json",
+        "name": "通用·正文初稿",
+        "description": "强节奏骨架——每300字小波动，信息密度优先",
+        "best_for": ["都市", "玄幻", "科幻", "历史"]
+      }
+    ],
+    "w3": [
+      {
+        "id": "healing_w3_qc",
+        "file": "w3_healing_qc.json",
+        "name": "治愈系·逻辑质检",
+        "description": "6项放松+6条红线——治愈系有治愈系的底线",
+        "best_for": ["治愈系", "生活流", "文学性作品", "轻言情"]
+      },
+      {
+        "id": "general_w3_qc",
+        "file": "w3_general_qc.json",
+        "name": "通用·逻辑质检",
+        "description": "标准网文质检——人设/伏笔/效率/钩子/世界观5项",
+        "best_for": ["都市", "玄幻", "科幻", "历史", "治愈系"]
+      }
+    ],
+    "w4": [
+      {
+        "id": "healing_w4_polish",
+        "file": "w4_healing_polish.json",
+        "name": "治愈系·文笔精修",
+        "description": "画面即情绪——五感优先+7种氛围技法+5种镜头语言",
+        "best_for": ["治愈系", "生活流", "文学性作品", "轻言情", "通用"]
+      },
+      {
+        "id": "general_w4_polish",
+        "file": "w4_general_polish.json",
+        "name": "通用·文笔精修",
+        "description": "标准网文精修——视觉优先+动作片剪辑+强情绪输出",
+        "best_for": ["都市", "玄幻", "科幻", "历史"]
+      }
+    ]
+  },
+  "assembly_examples": [
+    {
+      "name": "纯治愈系",
+      "description": "完整治愈系四车间——适合下北泽的雨天/海边的星期二",
+      "modules": {
+        "w1": "healing_w1_setup",
+        "w2": "healing_w2_draft",
+        "w3": "healing_w3_qc",
+        "w4": "healing_w4_polish"
+      }
+    },
+    {
+      "name": "纯通用",
+      "description": "标准网文四车间——适合都市/玄幻/科幻",
+      "modules": {
+        "w1": "general_w1_setup",
+        "w2": "general_w2_draft",
+        "w3": "general_w3_qc",
+        "w4": "general_w4_polish"
+      }
+    },
+    {
+      "name": "治愈骨架+通用精修",
+      "description": "治愈系W1-W3保证情绪设计，通用W4加入更强画面节奏——适合想保留治愈内核但提升可读性的作品",
+      "modules": {
+        "w1": "healing_w1_setup",
+        "w2": "healing_w2_draft",
+        "w3": "healing_w3_qc",
+        "w4": "general_w4_polish"
+      },
+      "conflict_note": "W4的五感优先级与W2的触觉优先可能冲突——建议在混搭校验中确认"
+    }
+  ]
+}

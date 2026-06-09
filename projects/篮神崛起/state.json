@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "title": "篮神崛起",
+    "type": "中篇",
+    "genre": "urban_power",
+    "platform": "qimao",
+    "target_words": 50000,
+    "target_chapters": 25,
+    "created_at": "2026-06-08 12:00:00"
+  },
+  "progress": {
+    "current_chapter": 5,
+    "total_words": 10000
+  },
+  "chapter_meta": {
+    "1": {
+      "filename": "第1章_觉醒！神级复制系统.txt",
+      "title": "觉醒！神级复制系统",
+      "word_count": 2000,
+      "created_at": "2026-06-08 12:00:00"
+    },
+    "2": {
+      "filename": "第2章_首秀！把校队队长打爆.txt",
+      "title": "首秀！把校队队长打爆",
+      "word_count": 2000,
+      "created_at": "2026-06-08 12:00:00"
+    },
+    "3": {
+      "filename": "第3章_震惊！一战成名.txt",
+      "title": "震惊！一战成名",
+      "word_count": 2000,
+      "created_at": "2026-06-08 12:00:00"
+    },
+    "4": {
+      "filename": "第4章_校花的特别关注.txt",
+      "title": "校花的特别关注",
+      "word_count": 2000,
+      "created_at": "2026-06-08 12:00:00"
+    },
+    "5": {
+      "filename": "第5章_赌约！要打CUBA预选赛.txt",
+      "title": "赌约！要打CUBA预选赛",
+      "word_count": 2000,
+      "created_at": "2026-06-08 12:00:00"
+    }
+  },
+  "references": [45, 46, 47]
+}

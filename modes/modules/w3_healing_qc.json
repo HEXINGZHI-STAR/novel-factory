@@ -1,0 +1,24 @@
+{
+  "module_id": "healing_w3_qc",
+  "name": "治愈系·逻辑质检",
+  "version": "2.1",
+  "workshop": "w3",
+  "source_mode": "healing_life_v2",
+  "description": "6项放松+6条红线——治愈系有治愈系的底线",
+  "relax_checks": [
+    "情绪的微逻辑跳跃",
+    "陌生人的过度善意",
+    "时间的季节性模糊",
+    "巧合的温柔感",
+    "物件的情感负重"
+  ],
+  "strict_checks": [
+    "红线A: 不可逆严重创伤",
+    "红线B: 释放须伴随可感知代价",
+    "红线C: 不能突然想通",
+    "红线D: 不能有男性拯救女主",
+    "红线E: 禁用直白情绪形容词",
+    "红线F: 每章至少1释放+1无用细节"
+  ],
+  "compatible_styles": ["healing", "slice_of_life", "literary", "romance_light"]
+}

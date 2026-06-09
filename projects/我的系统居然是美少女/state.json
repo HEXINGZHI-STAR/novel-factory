@@ -1,0 +1,24 @@
+{
+  "project_info": {
+    "title": "我的系统居然是美少女",
+    "type": "中篇",
+    "genre": "urban_power",
+    "platform": "qimao",
+    "target_words": 40000,
+    "target_chapters": 20,
+    "created_at": "2026-06-08 12:00:00"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 2000
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "系统激活！美少女从天而降",
+      "target_words": 2000,
+      "created_at": "2026-06-08 12:00:00",
+      "ai_generated": true
+    }
+  },
+  "references": [774, 775, 776]
+}

@@ -1,0 +1,20 @@
+{
+  "module_id": "healing_w1_setup",
+  "name": "治愈系·设定预处理",
+  "version": "2.1",
+  "workshop": "w1",
+  "source_mode": "healing_life_v2",
+  "description": "情绪释放设计前置——本章的情绪起点/拐点/五感排布/释放节点",
+  "focus": "本章的情绪释放设计+现实锚点+五感素材",
+  "extra_fields": [
+    "本章情绪起点",
+    "本章情绪拐点",
+    "现实锚点清单（至少3处）",
+    "五感优先级排布",
+    "本章释放节点设计",
+    "坂元式物件流转",
+    "无用但让世界变活的细节",
+    "冷库冻结项"
+  ],
+  "compatible_styles": ["healing", "slice_of_life", "literary", "romance_light"]
+}

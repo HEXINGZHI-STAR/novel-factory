@@ -1,0 +1,21 @@
+{
+  "project_info": {
+    "title": "古镇的咖啡店",
+    "genre": "healing_life",
+    "platform": "fanqie",
+    "target_words": 10000,
+    "target_chapters": 5,
+    "created_at": "2026-06-07 19:36:11"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 3000
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "主角回到古镇，重新开张奶奶留下的咖啡店",
+      "target_words": 3000,
+      "created_at": "2026-06-07 19:36:11"
+    }
+  }
+}

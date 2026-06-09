@@ -1,0 +1,28 @@
+{
+  "module_id": "general_w4_polish",
+  "name": "通用·文笔精修",
+  "version": "1.0",
+  "workshop": "w4",
+  "source_mode": "general",
+  "description": "标准网文精修——视觉优先、动作片式剪辑、强情绪输出",
+  "sensory_priority": [
+    "视觉（画面感/动作场面/场景切换）",
+    "听觉（对话节奏/环境音效）",
+    "触觉（冲击力/质感——可选加强）"
+  ],
+  "shot_types": [
+    "快速剪辑（多角度场景切换）",
+    "特写（关键动作/表情）",
+    "全景（世界观展示）"
+  ],
+  "atmosphere_techniques": [
+    "强节奏控制（300字一波动）",
+    "信息密度优化（每句对话推进剧情）",
+    "情绪放大器（铺垫→引爆→余震）"
+  ],
+  "taboo": [
+    "禁用冗余描写（环境超过全文20%需删减）",
+    "禁用无信息对话（每句对话必须有推进）"
+  ],
+  "compatible_styles": ["general", "urban", "fantasy", "sci-fi", "historical"]
+}

@@ -1,0 +1,19 @@
+{
+  "module_id": "general_w2_draft",
+  "name": "通用·正文初稿",
+  "version": "1.0",
+  "workshop": "w2",
+  "source_mode": "general",
+  "description": "标准网文骨架——强节奏、强画面、信息密度优先",
+  "dialogue_priority": "中。对话是信息载体，每句推进一个信息点。",
+  "action_style": "强节奏动作描写。每300字一个小波动，每800字一个中波动。",
+  "hook_types": [
+    "信息缺口型",
+    "时间锁型",
+    "能力边界型",
+    "关系破裂型",
+    "反转暗示型"
+  ],
+  "forbidden_hooks": [],
+  "compatible_styles": ["general", "urban", "fantasy", "sci-fi", "historical"]
+}

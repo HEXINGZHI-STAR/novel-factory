@@ -1,0 +1,19 @@
+{
+  "project_info": {
+    "title": "阿念回家",
+    "type": "novel",
+    "genre": "healing_life",
+    "platform": "qimao",
+    "target_words": 300000,
+    "target_chapters": 150
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 0
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "ai_generated": true
+    }
+  }
+}

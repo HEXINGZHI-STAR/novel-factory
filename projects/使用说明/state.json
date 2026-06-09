@@ -1,0 +1,24 @@
+{
+  "project_info": {
+    "title": "请在使用前仔细阅读",
+    "genre": "romance",
+    "platform": "jinjiang",
+    "target_words": 7800,
+    "target_chapters": 1,
+    "created_at": "2026-06-07",
+    "core_selling_points": "相亲可行性报告、反套路的极致坦诚、两个精确型人格的爱情语法"
+  },
+  "progress": { "current_chapter": 1, "total_words": 7800 },
+  "workshop_log": {
+    "w0_thesis": "好的爱是你不用假装——你的'缺点'恰好是他的'匹配项'",
+    "w0_anchor": "便利店门口，他递过来一支和你嘴唇颜色一样的新口红",
+    "w1_emotion_curve": "绷着→被击穿→决定反击→在反击中完成交付",
+    "w1_objects": ["报告", "钢笔", "美式咖啡", "折叠伞"],
+    "w2_scenes": 3,
+    "w3_checks_passed": true,
+    "w3_warnings": ["便利贴的黄色和封面的宋体在文末有轻微重复但不影响阅读"],
+    "w4_temperature": 0.85,
+    "w4_sensory_priority": "触觉(报告纸/钢笔重量/伞柄) > 嗅觉(咖啡/墨水) > 听觉(笔尖声/地铁) > 视觉(封面字体/便利贴颜色)",
+    "w4_shot_types": "特写(手指触碰/笔尖/便利贴)+主观镜头(苏晚视角)"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-03",
+  "note": "基于2025-2026年番茄、起点、七猫、晋江四大平台的爆款数据与编辑公开解读",
+  "profiles": {
+    "fanqie": {
+      "name": "番茄小说",
+      "core_logic": "算法推荐+拉新向",
+      "key_metric": "完读率、追读率、前三章留存",
+      "chapter_length": "1500±50字",
+      "opening": {
+        "hook_position": "前300字必须出冲突",
+        "golden_rule": "黄金三章已死，黄金三钩当立。七行内抛出首个钩子，300字内决定追不追",
+        "first_chapter_structure": {
+          "0-10%": "异常事件触发（死亡/背叛/系统绑定/规则突变）",
+          "10-40%": "主角反应+初步行动",
+          "40-80%": "小高潮或致命悬念",
+          "80-100%": "强钩子收尾"
+        }
+      },
+      "paragraph_rules": {
+        "max_lines_per_para": 3,
+        "dialogue_format": "对话必须独立成行",
+        "forbidden": ["长段落", "大段心理描写", "大段环境描写", "总结性的话", "回忆倒叙"]
+      },
+      "sentence_rules": {
+        "max_chars_per_sentence": 15,
+        "style": "短句为主，大白话，拒绝文艺修辞、生僻字",
+        "forbidden_patterns": ["长难句", "生僻词", "书面化连接词（因此/此外/综上所述）"]
+      },
+      "dialogue_rules": {
+        "min_ratio": 0.4,
+        "style": "信息密度高，每句推进一个信息点或情绪点",
+        "forbidden": ["文言文", "书面语对话", "过度礼貌"]
+      },
+      "scene_rules": {
+        "min_scenes_per_chapter": 3,
+        "max_scenes_per_chapter": 5,
+        "transition_style": "硬切，禁止过渡描写"
+      },
+      "emotion_delivery": {
+        "style": "直给型",
+        "forbidden": ["延迟满足", "过度留白", "克制含蓄"],
+        "required": "每500字1个小爽点，每章1次打脸/逆袭"
+      },
+      "satisfaction_points": {
+        "small": "每3章至少1个",
+        "medium": "每10章至少1个",
+        "large": "每20章至少1个"
+      },
+      "character_rules": {
+        "protagonist": "杀伐果断，有仇必报，不圣母、不优柔寡断",
+        "antagonist": "脸谱化，前期嚣张跋扈，被快速碾压",
+        "max_chars_first_chapter": 2
+      },
+      "taboo": ["洗白反派", "主角降智", "圣母心", "狗血误会", "憋屈内耗", "大团圆结局"],
+      "ai_trace_high_risk": ["冰冷的眼神", "嘴角勾起", "冷哼一声", "瞳孔骤缩", "倒吸一口凉气", "脸色大变"]
+    },
+    "qidian": {
+      "name": "起点中文网",
+      "core_logic": "付费订阅+粉丝经济",
+      "key_metric": "均订、月票、粉丝值、追订率",
+      "chapter_length": "2000-3000字",
+      "opening": {
+        "hook_position": "前三章建立世界观期待",
+        "golden_rule": "第一章必须亮金手指+核心冲突，支持稍慢热铺垫",
+        "first_chapter_structure": {
+          "0-20%": "世界异常引入",
+          "20-50%": "主角处境+金手指展示",
+          "50-80%": "第一次小高潮",
+          "80-100%": "世界观钩子"
+        }
+      },
+      "paragraph_rules": {
+        "max_lines_per_para": 5,
+        "dialogue_format": "对话可嵌入段落，也可独立成行",
+        "forbidden": ["纯灌水段落", "与主线无关的支线铺垫"]
+      },
+      "sentence_rules": {
+        "max_chars_per_sentence": 25,
+        "style": "允许中长句，但要保持节奏感",
+        "forbidden_patterns": ["连续超长句", "重复句式"]
+      },
+      "dialogue_rules": {
+        "min_ratio": 0.3,
+        "style": "可带信息量，允许潜台词",
+        "forbidden": ["纯废话对话", "过度网络化口语"]
+      },
+      "scene_rules": {
+        "min_scenes_per_chapter": 2,
+        "max_scenes_per_chapter": 4,
+        "transition_style": "允许适度过渡"
+      },
+      "emotion_delivery": {
+        "style": "延迟爆发型",
+        "forbidden": ["情绪单一", "无层次感"],
+        "required": "铺垫后释放，强调智商优越感"
+      },
+      "satisfaction_points": {
+        "small": "每5章至少1个",
+        "medium": "每15章至少1个",
+        "large": "每30章至少1个"
+      },
+      "character_rules": {
+        "protagonist": "人设鲜明，成长弧光清晰",
+        "antagonist": "允许有层次，但核心价值观必须对立",
+        "max_chars_first_chapter": 3
+      },
+      "taboo": ["战力崩坏", "逻辑硬伤", "注水严重", "主角性格突变无铺垫"],
+      "ai_trace_high_risk": ["模板式外貌描写", "套路化升级感言"]
+    },
+    "qimao": {
+      "name": "七猫小说",
+      "core_logic": "免费阅读+新媒体向",
+      "key_metric": "留存率、完读率、读者评分",
+      "chapter_length": "1500-2000字",
+      "opening": {
+        "hook_position": "前500字完成冲突+人设+悬念闭环",
+        "golden_rule": "编辑初审仅2-5分钟，500字内无爆点直接拒稿",
+        "first_chapter_structure": {
+          "0-25%": "冲击性画面/情绪极端场景",
+          "25-50%": "人设锚点建立",
+          "50-75%": "核心矛盾抛出",
+          "75-100%": "悬念钩子"
+        }
+      },
+      "paragraph_rules": {
+        "max_lines_per_para": 3,
+        "dialogue_format": "对话独立成行",
+        "forbidden": ["长段落", "背景介绍", "流水账"]
+      },
+      "sentence_rules": {
+        "max_chars_per_sentence": 18,
+        "style": "短句为主，情绪浓烈",
+        "forbidden_patterns": ["冷静叙述", "客观描述", "学术化表达"]
+      },
+      "dialogue_rules": {
+        "min_ratio": 0.45,
+        "style": "情绪直给，对话即冲突",
+        "forbidden": ["平淡对话", "过度解释"]
+      },
+      "scene_rules": {
+        "min_scenes_per_chapter": 3,
+        "max_scenes_per_chapter": 5,
+        "transition_style": "快节奏切换"
+      },
+      "emotion_delivery": {
+        "style": "极致浓烈型",
+        "forbidden": ["克制", "含蓄", "暧昧", "留白"],
+        "required": "一章一高潮，情绪必须拉到极端"
+      },
+      "satisfaction_points": {
+        "small": "每2章至少1个",
+        "medium": "每5章至少1个",
+        "large": "每10章至少1个"
+      },
+      "character_rules": {
+        "protagonist": "极端人设，情绪强烈，行为果断",
+        "antagonist": "必须让读者恨得牙痒",
+        "max_chars_first_chapter": 2
+      },
+      "taboo": ["慢热", "平淡", "情绪不够浓烈", "反转不足"],
+      "ai_trace_high_risk": ["中性描写", "情绪收敛", "模板化冲突"]
+    },
+    "jinjiang": {
+      "name": "晋江文学城",
+      "core_logic": "女性付费+IP向",
+      "key_metric": "收藏、评论、霸王票、读者粘性",
+      "chapter_length": "2000-4000字",
+      "opening": {
+        "hook_position": "前2000字内建立人设与情绪钩",
+        "golden_rule": "女性向重情感代入，快速触发共情而非动作",
+        "first_chapter_structure": {
+          "0-20%": "情绪场景切入",
+          "20-50%": "核心关系建立",
+          "50-80%": "情感张力第一次拉扯",
+          "80-100%": "关系悬念"
+        }
+      },
+      "paragraph_rules": {
+        "max_lines_per_para": 4,
+        "dialogue_format": "对话可嵌入，强调潜台词",
+        "forbidden": ["纯动作段落", "无情感信息的对白"]
+      },
+      "sentence_rules": {
+        "max_chars_per_sentence": 22,
+        "style": "细腻，允许中长句，强调五感",
+        "forbidden_patterns": ["粗暴短句", "直白说教", "网络化粗口"]
+      },
+      "dialogue_rules": {
+        "min_ratio": 0.35,
+        "style": "言外之意大于字面意思，善用沉默和打断",
+        "forbidden": ["直白表白", "过度解释", "对话无留白"]
+      },
+      "scene_rules": {
+        "min_scenes_per_chapter": 2,
+        "max_scenes_per_chapter": 3,
+        "transition_style": "情绪过渡，允许慢切"
+      },
+      "emotion_delivery": {
+        "style": "细腻渗透型",
+        "forbidden": ["直给", "粗暴", "说教"],
+        "required": "五感沉浸，情绪层次丰富"
+      },
+      "satisfaction_points": {
+        "small": "每章至少2次情绪小高潮（心动/心酸/甜蜜/酸涩）",
+        "medium": "每5章至少1个",
+        "large": "每15章至少1个"
+      },
+      "character_rules": {
+        "protagonist": "人设鲜明，情感细腻，成长线清晰",
+        "antagonist": "可有复杂动机，但不能纯恶",
+        "max_chars_first_chapter": 3
+      },
+      "taboo": ["三观不正", "虐女无底线", "工业糖精", "逻辑硬伤"],
+      "ai_trace_high_risk": ["粗糙外貌描写", "套路化心动", "无层次的情感输出"]
+    }
+  }
+}

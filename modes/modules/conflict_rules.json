@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "description": "模块混搭冲突校验规则。定义不同风格模块组合时的兼容性约束。",
+  "rules": [
+    {
+      "id": "hook_incompat_001",
+      "severity": "error",
+      "description": "治愈系W2禁用悬念钩子，但通用/悬疑W2可能使用——混搭时钩子类型冲突",
+      "check": {
+        "fields": ["w2.forbidden_hooks", "w2.hook_types"],
+        "cross_module": true
+      },
+      "conflict_pattern": {
+        "source_module_has": "forbidden_hooks",
+        "target_module_has": "hook_types",
+        "match_keywords": ["悬念", "危机", "信息缺口"]
+      },
+      "resolution": "以主模式（w2的source_mode）为准，禁用冲突钩子类型"
+    },
+    {
+      "id": "qc_relax_vs_strict_002",
+      "severity": "warning",
+      "description": "治愈系W3放松'情绪的微逻辑跳跃'，悬疑/推理W3却严格检查逻辑一致性——质检标准冲突",
+      "check": {
+        "fields": ["w3.relax_checks", "w3.strict_checks"],
+        "cross_module": true
+      },
+      "conflict_pattern": {
+        "source_relax_contains": ["逻辑跳跃", "模糊", "理想化"],
+        "target_strict_contains": ["逻辑", "一致性", "推理"]
+      },
+      "resolution": "合并两项检查：微逻辑允许跳跃，但核心剧情逻辑仍需一致"
+    },
+    {
+      "id": "sensory_priority_003",
+      "severity": "warning",
+      "description": "治愈系W4感官优先级为'触觉>听觉>视觉'，通用模式为'视觉>听觉>触觉'——氛围手法冲突",
+      "check": {
+        "fields": ["w4.sensory_priority"],
+        "cross_module": true
+      },
+      "conflict_pattern": {
+        "first_priority_differs": true
+      },
+      "resolution": "W4以主模式为准，但允许用户在混搭时手动覆盖"
+    },
+    {
+      "id": "dialogue_budget_004",
+      "severity": "warning",
+      "description": "治愈系W2要求对话率<25%，言情W2可能允许更高——对话密度冲突",
+      "check": {
+        "fields": ["w2.dialogue_priority"],
+        "cross_module": true
+      },
+      "conflict_pattern": {
+        "low_dialogue_source": "healing",
+        "high_dialogue_sources": ["romance", "general"]
+      },
+      "resolution": "以主模式对话预算为准，副模式在对话质量上妥协"
+    },
+    {
+      "id": "ending_style_005",
+      "severity": "error",
+      "description": "治愈系禁止悬念收尾（须以画面/天气/物件收尾），悬疑/规则怪谈依赖悬念钩子——收尾逻辑根本冲突",
+      "check": {
+        "fields": ["w2.forbidden_hooks", "w4.atmosphere_techniques"],
+        "cross_workshop": true
+      },
+      "conflict_pattern": {
+        "healing_forbids": "悬念收尾",
+        "mystery_requires": "悬念钩子"
+      },
+      "resolution": "不可调和——建议不使用跨风格W2/W4混搭，改为一风格统管全部车间"
+    },
+    {
+      "id": "emotion_arc_006",
+      "severity": "info",
+      "description": "治愈系情绪曲线为'压抑→裂缝→溃堤→诉说→无声的胜利'，发疯文学为'压抑→积累→引爆→回落'——释放节奏可互补但需明确主次",
+      "check": {
+        "fields": ["w1.extra_fields"],
+        "cross_module": true
+      },
+      "conflict_pattern": {
+        "healing_curve": "5阶段释放",
+        "crazy_lit_curve": "4阶段爆发"
+      },
+      "resolution": "以主模式的释放曲线为骨架，副模式的释放方式为可选技法"
+    }
+  ],
+  "compatibility_matrix": {
+    "description": "模块风格之间的兼容性评分 (3=最佳, 2=可混搭需微调, 1=需大幅调整, 0=不建议)",
+    "healing": {
+      "healing": 3,
+      "slice_of_life": 3,
+      "literary": 2,
+      "romance_light": 2,
+      "general": 2,
+      "romance": 1,
+      "mystery": 0,
+      "crazy_lit": 0
+    }
+  },
+  "cross_workshop_constraints": [
+    {
+      "id": "cross_001",
+      "description": "如果W2使用治愈系，则W4也必须使用治愈系（钩子和收尾风格必须一致）",
+      "rule": "w2.source_mode == 'healing' → w4.source_mode == 'healing'",
+      "severity": "error"
+    },
+    {
+      "id": "cross_002",
+      "description": "W1和W3可以跨风格混搭（设定预处理和质检逻辑相对独立）",
+      "rule": "w1 和 w3 自由混搭",
+      "severity": "info"
+    }
+  ]
+}

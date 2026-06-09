@@ -1,0 +1,17 @@
+{
+  "module_id": "general_w3_qc",
+  "name": "通用·逻辑质检",
+  "version": "1.0",
+  "workshop": "w3",
+  "source_mode": "general",
+  "description": "标准网文质检——人设一致性、伏笔逻辑、剧情推进效率",
+  "relax_checks": [],
+  "strict_checks": [
+    "人设一致性（行为符合角色设定）",
+    "伏笔逻辑（新信息不冲突已有设定）",
+    "剧情推进效率（无冗余场景）",
+    "钩子有效性（章末钩子必须真正制造期待）",
+    "世界观一致性（不出现设定矛盾）"
+  ],
+  "compatible_styles": ["general", "urban", "fantasy", "sci-fi", "historical", "healing"]
+}

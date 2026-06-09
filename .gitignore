@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 环境变量 (含API密钥)
+.env
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 日志文件
+*.log
+
+# 临时文件
+temp_*
+*temp*
+
+# 二进制投稿文档
+*.docx
+*.pdf
+
+# IDE
+.vscode/
+.idea/
+
+# 素材库（太大，单独管理）
+素材库/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+{
+  "module_id": "healing_w2_draft",
+  "name": "治愈系·正文初稿",
+  "version": "2.1",
+  "workshop": "w2",
+  "source_mode": "healing_life_v2",
+  "description": "电影镜头式动作描写——对话不是解释情绪的工具，情绪在动作/物件/天气里",
+  "dialogue_priority": "低。每句对话≤20字，对话间用动作和沉默填充。",
+  "action_style": "电影镜头式——每个动作都是摄影机看到了什么",
+  "hook_types": [
+    "情绪悬停型",
+    "物件流转型",
+    "季节/时间感知型",
+    "关系微变型",
+    "善意接力型"
+  ],
+  "forbidden_hooks": [
+    "危机钩/悬念钩",
+    "信息缺口型",
+    "能力边界型"
+  ],
+  "compatible_styles": ["healing", "slice_of_life", "literary"]
+}

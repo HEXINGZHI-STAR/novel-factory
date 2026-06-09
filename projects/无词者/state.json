@@ -1,0 +1,20 @@
+{
+  "project_info": {
+    "title": "无词者",
+    "genre": "general",
+    "platform": "qimao",
+    "target_words": 400000,
+    "target_chapters": 200,
+    "created_at": "2026-06-08"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 2750
+  },
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "阿拾发现她能偷命词",
+      "ai_generated": true
+    }
+  }
+}
