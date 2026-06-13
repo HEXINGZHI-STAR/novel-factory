@@ -1,0 +1,15 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.10"}
+      - run: pip install pytest python-dotenv requests structlog
+      - run: |
+          cd $GITHUB_WORKSPACE
+          python -c "import sys; sys.path.insert(0,'.'); from pangu_core.config import Config; from pangu_math.accelerated import Vector; print('All imports OK')"
