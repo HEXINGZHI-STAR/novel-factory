@@ -23,5 +23,7 @@ jobs:
           pip install pytest pytest-mock python-dotenv requests structlog pyarrow numpy
 
       - name: Run unit tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           python -m pytest tests/unit/ -v --tb=short
