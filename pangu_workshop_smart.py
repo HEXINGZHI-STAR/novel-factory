@@ -351,6 +351,22 @@ class SmartStrategyEngine:
 
         base_task = tasks.get(chapter_num, f"第{chapter_num}章正文")
 
+        # 风格一致性: 注入前章风格指纹
+        if chapter_num > 1:
+            try:
+                from pangu_math.stats.style_fingerprint import StyleFingerprint
+                prev_content = None
+                content_dir = self.project_dir / "正文"
+                prev_files = list(content_dir.glob(f"*第{chapter_num-1}章*"))
+                if prev_files:
+                    prev_content = prev_files[0].read_text(encoding="utf-8")
+                if prev_content:
+                    sf = StyleFingerprint.from_text(prev_content)
+                    top3 = sf.top_dimensions(3)
+                    base_task += f"【风格一致】前章风格: {top3[0][0]}主导。保持与前章一致的叙事节奏和句法风格。"
+            except Exception:
+                pass
+
         # 叠加策略
         strategy = self.recommend_strategy(chapter_num)
         prev_intel = self._load_previous_intelligence(chapter_num - 1)

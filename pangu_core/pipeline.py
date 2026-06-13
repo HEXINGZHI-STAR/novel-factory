@@ -339,6 +339,26 @@ class WritingPipeline:
                 else:
                     warnings.extend(output.warnings)
 
+                # W2-W3反馈回路: W3质检不通过 → 回W2重写
+                if stage_id == "W3" and output.success:
+                    qc = output.data.get("qc_report", {})
+                    if not qc.get("passed", True) and qc.get("score", 1.0) < 0.7:
+                        retry_count = self.context.get("w2_retry_count", 0)
+                        if retry_count < 2:
+                            self.context.set("w2_retry_count", retry_count + 1)
+                            issues = qc.get("issues", [])
+                            self.context.set("chapter_task",
+                                self.context.get("chapter_task", "") +
+                                "【W3反馈·请修正】" + ";".join(issues[:3]))
+                            print(f"  [回路] QC未通过(分{qc['score']:.1f})→回W2重写({retry_count+1}/2)")
+                            output2 = self._execute_stage("W2")
+                            self.context.stage_outputs["W2"] = output2
+                            # 重跑W3
+                            output3 = self._execute_stage("W3")
+                            self.context.stage_outputs["W3"] = output3
+                            if not output3.success:
+                                warnings.append(f"W3重试{retry_count+1}后仍未通过")
+
             except Exception as e:
                 error_msg = f"Stage {stage_id} 执行异常: {e}"
                 errors.append(error_msg)
