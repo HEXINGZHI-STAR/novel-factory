@@ -1,0 +1,22 @@
+[
+  {
+    "event_type": "world_rule_revealed",
+    "trigger": "秘密",
+    "chapter": 6,
+    "context": "的那些魔，很多都是冤魂。”赵秀兰的声音很轻，轻得像是在说一个秘密，“那些冤魂，是被活人害死的。他帮活人除掉了冤魂，等于是帮凶手掩盖了罪行。”\n姜渺的手停在照片上，指",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  },
+  {
+    "event_type": "emotional_peak",
+    "trigger": "愤怒",
+    "chapter": 6,
+    "context": "”\n赵秀兰看着她，目光里有一种说不清的东西，像是恐惧，又像是愤怒。\n“是债。”她说，“是祖上欠下的债。”\n“什么债？”\n赵秀兰没说话。她走到床边，从枕头底下摸出一个",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  }
+]

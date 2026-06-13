@@ -1,0 +1,77 @@
+version: "3.8"
+
+services:
+  # ============ 盘古 API 服务 ============
+  api:
+    build: .
+    container_name: pangu-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PANGU_LOG_LEVEL=${PANGU_LOG_LEVEL:-INFO}
+      - PANGU_LOG_FORMAT=${PANGU_LOG_FORMAT:-console}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - PANGU_STAGE_MODELS=${PANGU_STAGE_MODELS:-}
+      - DATABASE_URL=postgresql://pangu:pangu@db:5432/pangu
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./projects:/app/projects
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============ 异步 Worker ============
+  worker:
+    build: .
+    container_name: pangu-worker
+    command: celery -A pangu_server.worker worker --loglevel=info --concurrency=2
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DATABASE_URL=postgresql://pangu:pangu@db:5432/pangu
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./projects:/app/projects
+      - ./logs:/app/logs
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+
+  # ============ PostgreSQL ============
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: pangu-db
+    environment:
+      POSTGRES_USER: pangu
+      POSTGRES_PASSWORD: pangu
+      POSTGRES_DB: pangu
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./knowledge/db_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pangu"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ============ Redis ============
+  redis:
+    image: redis:7-alpine
+    container_name: pangu-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+volumes:
+  pgdata:
+  redisdata:

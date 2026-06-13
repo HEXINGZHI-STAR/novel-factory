@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "MASTER_SETTING",
+    "title": "镇妖司：新科状元",
+    "genre": "通用",
+    "mode": "悬疑",
+    "platform": "qidian"
+  },
+  "master_constraints": {
+    "core_tone": "平衡节奏，爽感与悬念交替",
+    "pacing_strategy": "稳健节奏：允许慢热但需长线钩子，设定严谨逻辑自洽",
+    "locked_rules": []
+  },
+  "core_characters": {
+    "protagonist": {
+      "role": "",
+      "signature": "",
+      "personality": "",
+      "rage_trigger": ""
+    }
+  },
+  "active_foreshadowing": [],
+  "override_policy": {
+    "locked": [
+      "meta.genre",
+      "master_constraints.core_tone"
+    ],
+    "append_only": [
+      "active_foreshadowing"
+    ],
+    "override_allowed": [
+      "master_constraints.pacing_strategy"
+    ]
+  }
+}

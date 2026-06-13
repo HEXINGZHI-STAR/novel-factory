@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "MASTER_SETTING",
+    "title": "深渊猎人",
+    "genre": "都市",
+    "mode": "urban_power",
+    "platform": "qimao"
+  },
+  "master_constraints": {
+    "core_tone": "现实感+爽感节奏，代入感强",
+    "pacing_strategy": "快节奏：500字入戏，章末强钩子，爽感>悬念>情感",
+    "locked_rules": [
+      "深渊裂缝共7条主裂缝",
+      "蚀物分1-5阶",
+      "猎人分铜银金铂钻5级",
+      "深渊之眼每次使用吞噬一段记忆",
+      "壁垒城分上城和下城"
+    ]
+  },
+  "core_characters": {
+    "沈渊": {
+      "role": "主角",
+      "signature": "使用深渊之眼时左眼变黑",
+      "personality": "冷硬、护短、嘴毒心善、绝不欠人情",
+      "rage_trigger": "有人伤害他在乎的人"
+    },
+    "叶青禾": {
+      "role": "女主",
+      "signature": "",
+      "personality": "倔强、正义感强、不服输",
+      "rage_trigger": ""
+    },
+    "老周": {
+      "role": "导师/情报贩子",
+      "signature": "",
+      "personality": "圆滑、看似市侩实则重义",
+      "rage_trigger": ""
+    },
+    "顾长明": {
+      "role": "主要反派",
+      "signature": "",
+      "personality": "温和外表、冷酷内核",
+      "rage_trigger": ""
+    }
+  },
+  "active_foreshadowing": [
+    {
+      "id": "F001",
+      "content": "深渊之眼的上一任持有者已疯",
+      "status": "active"
+    },
+    {
+      "id": "F002",
+      "content": "裂缝深处有人类实验痕迹",
+      "status": "planned"
+    },
+    {
+      "id": "F003",
+      "content": "老周隐藏的铂级猎人身份",
+      "status": "planned"
+    },
+    {
+      "id": "F004",
+      "content": "蚀主与深渊之眼的联系",
+      "status": "planned"
+    },
+    {
+      "id": "F005",
+      "content": "顾长明主导的深渊实验",
+      "status": "planned"
+    }
+  ],
+  "override_policy": {
+    "locked": [
+      "meta.genre",
+      "master_constraints.core_tone"
+    ],
+    "append_only": [
+      "active_foreshadowing"
+    ],
+    "override_allowed": [
+      "master_constraints.pacing_strategy"
+    ]
+  }
+}

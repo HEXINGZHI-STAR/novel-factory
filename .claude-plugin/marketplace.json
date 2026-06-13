@@ -1,0 +1,22 @@
+{
+  "name": "pangu-marketplace",
+  "description": "盘古AI写作系统 — Claude Code 原生写作技能集",
+  "metadata": {
+    "description": "治愈系·情绪释放·电影质感。DeepSeek + Claude 双AI协作写作。"
+  },
+  "owner": {
+    "name": "pangu"
+  },
+  "plugins": [
+    {
+      "name": "pangu-writer",
+      "description": "盘古AI写作技能集：写章、规划、审查、初始化、查询、体检",
+      "version": "1.0.0",
+      "author": {
+        "name": "盘古AI"
+      },
+      "source": "./skills",
+      "category": "productivity"
+    }
+  ]
+}

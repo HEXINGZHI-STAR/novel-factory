@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 1
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "第1章正文\n【强制对话要求】本章对话占比≥25%。人物之间必须有多轮对话。格式示例：\n\"X说：...\" 后跟一句动作。如：\n  沈夜拱手：\"敢问公公，将我调往何处？\"\n  太监将密旨塞进他手里：\"镇妖司。即刻上任。\"\n  沈夜追问：\"为何是我？\"\n  太监转身便走，影子在墙上拉长：\"去了便知。\"\n对话推动剧情，每段对话3-5句。对话之间用简短动作填充。\n【本章约束】开篇300字内必须建立日常中的异"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 14593
+  },
+  "override_allowed": {
+    "chapter_focus": "第1章正文\n【强制对话要求】本章对话占比≥25%。人物之间必须有多轮对话。格式示例：\n\"X说：...\" 后跟一句动作。如：\n  沈夜拱手：\"敢问公公，将我调往何处？\"\n  太监将密旨塞进他手里：\"镇妖"
+  }
+}

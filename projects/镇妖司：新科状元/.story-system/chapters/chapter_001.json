@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 1
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "沈夜骑马游街，连中三元。太监突传密旨调任镇妖司。沈夜与太监对话周旋。章末：太监影子在墙上扭曲成妖形。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 2244
+  },
+  "override_allowed": {
+    "chapter_focus": "沈夜骑马游街，连中三元。太监突传密旨调任镇妖司。沈夜与太监对话周旋。章末：太监影子在墙上扭曲成妖形。"
+  }
+}

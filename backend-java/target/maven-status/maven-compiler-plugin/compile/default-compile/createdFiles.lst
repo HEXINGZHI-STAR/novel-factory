@@ -1,0 +1,6 @@
+com\pangu\service\PythonBridge$1.class
+com\pangu\service\PythonBridge.class
+com\pangu\config\CorsConfig.class
+com\pangu\PanguApplication.class
+com\pangu\controller\ProjectController.class
+com\pangu\controller\AnalysisController.class

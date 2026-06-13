@@ -1,0 +1,89 @@
+{
+  "platform": "qimao",
+  "constraints": {
+    "dialogue_rate_min": 0.42,
+    "hook_per_words": 300,
+    "first_conflict_words": 300,
+    "mc_max_speak_words": 10,
+    "mc_signature_action": "活动右手腕"
+  },
+  "chapter_plans": {
+    "1": {
+      "chapter_num": 1,
+      "chapter_type": "lifeline",
+      "write_mode": "human",
+      "chapter_task": "开篇：主角苏醒+致命威胁+人设建立",
+      "key_hook": "12个机器人逼近，4分37秒",
+      "key_satisfaction": "72小时倒计时→'够了'→笑了",
+      "foreshadow_plant": [],
+      "foreshadow_collect": [],
+      "characters_present": [
+        "林夜",
+        "诺亚"
+      ],
+      "word_count_target": 2700
+    },
+    "2": {
+      "chapter_num": 2,
+      "chapter_type": "lifeline",
+      "write_mode": "human",
+      "chapter_task": "追杀+伏击以弱胜强+基因改造升级",
+      "key_hook": "暗金色血字'不要叫醒她'",
+      "key_satisfaction": "布条伏击机器人+317%基因改造",
+      "foreshadow_plant": [],
+      "foreshadow_collect": [],
+      "characters_present": [
+        "林夜",
+        "诺亚"
+      ],
+      "word_count_target": 2700
+    },
+    "3": {
+      "chapter_num": 3,
+      "chapter_type": "lifeline",
+      "write_mode": "human",
+      "chapter_task": "发现机甲+同步率+求救信号",
+      "key_hook": "求救信号'救……我……'",
+      "key_satisfaction": "白昼机甲+97.3%同步率",
+      "foreshadow_plant": [],
+      "foreshadow_collect": [],
+      "characters_present": [
+        "林夜",
+        "诺亚"
+      ],
+      "word_count_target": 2700
+    },
+    "4": {
+      "chapter_num": 4,
+      "chapter_type": "lifeline",
+      "write_mode": "human",
+      "chapter_task": "救出女主+碾压战力+CP互动",
+      "key_hook": "'林夜，你终于醒了'",
+      "key_satisfaction": "苏瑶秒杀虫怪+CP'扯平'",
+      "foreshadow_plant": [],
+      "foreshadow_collect": [],
+      "characters_present": [
+        "林夜",
+        "诺亚",
+        "苏瑶"
+      ],
+      "word_count_target": 2700
+    },
+    "5": {
+      "chapter_num": 5,
+      "chapter_type": "lifeline",
+      "write_mode": "human",
+      "chapter_task": "打脸三连+星门巨舰",
+      "key_hook": "黑色巨舰从星门驶出，炮口对准空间站",
+      "key_satisfaction": "铁牙团嘲讽→一炮击沉→打脸三连",
+      "foreshadow_plant": [],
+      "foreshadow_collect": [],
+      "characters_present": [
+        "林夜",
+        "诺亚",
+        "苏瑶"
+      ],
+      "word_count_target": 2700
+    }
+  }
+}

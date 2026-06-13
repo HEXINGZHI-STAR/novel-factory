@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 7
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "姜渺的左眼视力开始模糊——血丝已经蔓延到瞳孔边缘。沈让发现了她的异常，追问之下姜渺说出能力代价：每用一次，多一条血丝。用多了会瞎。沈让帮她查姜兰的病例——发现姜兰入院前右眼也出现过同样症状。\n【强制】对话≥35%。沈让与姜渺多轮对话推进调查。章末钩子：姜兰的病历最后一页被人撕掉了。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 36080
+  },
+  "override_allowed": {
+    "chapter_focus": "姜渺的左眼视力开始模糊——血丝已经蔓延到瞳孔边缘。沈让发现了她的异常，追问之下姜渺说出能力代价：每用一次，多一条血丝。用多了会瞎。沈让帮她查姜兰的病例——发现姜兰入院前右眼也出现过同样症状。\n【强制】"
+  }
+}

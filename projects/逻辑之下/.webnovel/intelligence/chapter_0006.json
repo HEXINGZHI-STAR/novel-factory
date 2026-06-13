@@ -1,0 +1,79 @@
+{
+  "chapter": 6,
+  "project": "逻辑之下",
+  "analyzed_at": "2026-06-12 10:02:38",
+  "word_count": 3985,
+  "paragraph_count": 122,
+  "sentence_stats": {
+    "mean_len": 19.4,
+    "cv": 0.603,
+    "long_ratio": 0.159,
+    "max_consecutive_short": 4,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.184,
+    "mtld": 1209.4,
+    "simpson": 0.999,
+    "entropy": 10.57
+  },
+  "readability_score": {
+    "total": 88.0,
+    "grade": "A-小学",
+    "avg_strokes": 8.1
+  },
+  "style_vector": [
+    0.3193,
+    0.6031,
+    0.159,
+    0.1842,
+    0.3469,
+    1.0,
+    1.0,
+    0.1727,
+    0.0,
+    0.0921,
+    0.1698,
+    0.3178,
+    0.7311,
+    0.0,
+    0.8098,
+    0.918,
+    0.0,
+    0.0,
+    0.0518,
+    0.0518
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 195.0,
+    "complexity": 1.0,
+    "mean_valence": -0.0,
+    "energy_bands": {
+      "低频": 0.16494845360824723,
+      "中频": 0.16494845360824723,
+      "高频": 0.6701030927835051
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 4.3,
+    "peak_position": 0.45,
+    "mean_tension": 3.3,
+    "pacing_quality": 0.8
+  },
+  "rhythm_analysis": {
+    "primary_period": 27.0,
+    "consistency": 0.177,
+    "is_mechanistic": false,
+    "is_chaotic": false
+  },
+  "character_network": {},
+  "foreshadow_health": {},
+  "quality_posterior": 0.8219512439367063,
+  "quality_trend": "declining",
+  "ai_risk_score": 0.3,
+  "reader_retention_est": 0.06020334265483438,
+  "risk_flags": [],
+  "audit_opinion": "CLEAN — 无显著风险",
+  "recommendation": "质量在后半章下降——检查后半是否赶工",
+  "next_chapter_advice": "按总纲章纲正常推进"
+}

@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "genre": "末世/科幻",
+    "created": "2025",
+    "title": "末世：我有一座外星空间站",
+    "summary": "地球被跨维度文明'收割者'撕裂137年后，末世老兵林夜在一座晨曦族空间站中苏醒。72小时能源倒计时、失控机器人、星际海盗、神秘银发少女、星门另一端的黑色巨舰——他的征途，是重建整个文明。",
+    "author": "盘古AI",
+    "mode": "urban_power",
+    "platform": "qimao",
+    "current_chapter": 5,
+    "total_chapters": 500,
+    "version": "重写版v2"
+  },
+  "characters": {
+    "林夜": {
+      "role": "主角",
+      "identity": "种子计划成员/CX-7空间站主人",
+      "personality": "强势果断、护短、不圣母不废话",
+      "combat_style": "以弱胜强、环境利用、先手攻击",
+      "signature_move": "战前活动右手腕",
+      "power_level": "基因改造+300%，精神感应",
+      "rage_trigger": "有人伤害他在乎的人"
+    },
+    "诺亚": {
+      "role": "AI搭档",
+      "identity": "CX-7空间站超级AI",
+      "note": "70%记忆被加密限制"
+    },
+    "苏瑶": {
+      "role": "女主",
+      "identity": "晨曦族最后一位共鸣者",
+      "ability": "念动力/空间折叠",
+      "appearance": "银白长发、金色瞳孔",
+      "note": "记忆被晨曦族清除"
+    },
+    "赵猛": {
+      "role": "中期反派",
+      "identity": "铁牙团首领/前地球联合军少校",
+      "note": "手中有晨曦族能量核心碎片"
+    },
+    "韩霜": {
+      "role": "长期势力",
+      "identity": "新人类联盟司令官/前地球联合军上校",
+      "note": "联盟内部有收割者潜伏者"
+    }
+  },
+  "foreshadowing": [
+    {"id": "F001", "content": "暗金色血字'不要叫醒她'", "planted_chapter": 2, "status": "active"},
+    {"id": "F002", "content": "加密信号'林夜，你终于醒了'", "planted_chapter": 4, "status": "active"},
+    {"id": "F003", "content": "诺亚70%记忆被加密", "planted_chapter": 1, "status": "active"},
+    {"id": "F004", "content": "禁区三层加密锁", "planted_chapter": 2, "status": "active"},
+    {"id": "F005", "content": "大撕裂的真正原因（收割者）", "planted_chapter": 1, "status": "active"},
+    {"id": "F006", "content": "苏瑶的记忆被清除", "planted_chapter": 4, "status": "active"},
+    {"id": "F007", "content": "黑色巨舰从星门驶出", "planted_chapter": 5, "status": "active"}
+  ],
+  "setting_log": [
+    {"rule": "空间站五级权限体系", "status": "locked", "detail": "一级已解锁，二级已解锁"},
+    {"rule": "基因改造+300%", "status": "locked", "detail": "不可逆"},
+    {"rule": "72小时能源倒计时", "status": "active", "detail": "第5章后仍有能源压力"},
+    {"rule": "晨曦族已灭绝", "status": "locked", "detail": "3万年前被收割者收割"},
+    {"rule": "收割者跨维度文明", "status": "active", "detail": "终极真相，逐步揭开"}
+  ]
+}

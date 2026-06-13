@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 5
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "第5章正文\n【本章约束】章末钩子类型: 悬念；峰值偏前——下章注意把高潮放在65-85%位置"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 30187
+  },
+  "override_allowed": {
+    "chapter_focus": "第5章正文\n【本章约束】章末钩子类型: 悬念；峰值偏前——下章注意把高潮放在65-85%位置"
+  }
+}

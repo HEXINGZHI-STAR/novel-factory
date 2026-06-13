@@ -1,0 +1,206 @@
+classDiagram
+    direction TB
+
+    class WritingPipeline {
+        +PipelineConfig config
+        +Dict~str,BaseStage~ stages
+        +PipelineContext context
+        +run() PipelineResult
+        +register_stage(stage: BaseStage)
+        +_execute_stage(stage_id: str) StageOutput
+        +_should_skip(stage_id: str) bool
+    }
+
+    class PipelineConfig {
+        +str mode
+        +bool quick_mode
+        +str project_dir
+        +str mode_rule
+        +str platform_rule
+        +int chapter_num
+        +str chapter_task
+        +List~str~ active_stages
+        +Dict stage_overrides
+        +from_quick_mode(project_dir, chapter, task, mode, platform) PipelineConfig
+        +from_workshop_mode(project_dir, chapter, task, mode, platform) PipelineConfig
+    }
+
+    class PipelineContext {
+        +Dict~str,Any~ data
+        +Dict~str,StageOutput~ stage_outputs
+        +set(key: str, value: Any)
+        +get(key: str, default: Any) Any
+        +get_stage_output(stage_id: str) StageOutput
+    }
+
+    class PipelineResult {
+        +bool success
+        +str chapter_content
+        +Dict~str,Any~ projections
+        +Dict~str,Any~ db_records
+        +List~str~ warnings
+        +List~str~ errors
+    }
+
+    class BaseStage {
+        <<abstract>>
+        +str stage_id
+        +str name
+        +str input_schema
+        +str output_schema
+        +Dict knowledge_policy
+        +run(context: PipelineContext) StageOutput
+        +validate_input(context: PipelineContext) bool
+        +validate_output(output: StageOutput) bool
+    }
+
+    class W0AnchorStage {
+        +run(context: PipelineContext) StageOutput
+        +_build_anchor_prompt(context) str
+    }
+
+    class W1SetupStage {
+        +run(context: PipelineContext) StageOutput
+        +_run_prewrite_gate(context) GateReport
+    }
+
+    class W2DraftStage {
+        +run(context: PipelineContext) StageOutput
+        +_call_ai_for_draft(context) str
+    }
+
+    class W3QCStage {
+        +run(context: PipelineContext) StageOutput
+        +_run_quality_check(context) QCResult
+    }
+
+    class W4PolishStage {
+        +run(context: PipelineContext) StageOutput
+        +_polish_draft(context) str
+    }
+
+    class W5ExportStage {
+        +run(context: PipelineContext) StageOutput
+        +_export_chapter(context) str
+    }
+
+    class StageOutput {
+        +str stage_id
+        +bool success
+        +Dict~str,Any~ data
+        +List~str~ warnings
+        +List~str~ errors
+    }
+
+    class PromptBuilder {
+        +Dict~str,str~ layers
+        +build_full_prompt(context: PipelineContext) str
+        +build_layer(layer_id: str, context: PipelineContext) str
+        +inject_knowledge(context: PipelineContext) str
+        +inject_contracts(context: PipelineContext) str
+        +inject_memory(context: PipelineContext) str
+        +inject_rag(context: PipelineContext) str
+        +inject_beat_sheet(context: PipelineContext) str
+        +inject_db_context(context: PipelineContext) str
+        +_L01_system_role(ctx) str
+        +_L02_mode_rules(ctx) str
+        +_L03_platform_rules(ctx) str
+        +_L04_style_guidance(ctx) str
+        +_L05_sentence_params(ctx) str
+        +_L06_reference_material(ctx) str
+        +_L07_previous_summary(ctx) str
+        +_L08_character_states(ctx) str
+        +_L09_foreshadowing(ctx) str
+        +_L10_story_contracts(ctx) str
+        +_L11_memory_layers(ctx) str
+        +_L12_rag_retrieval(ctx) str
+        +_L13_beat_sheet(ctx) str
+        +_L14_chapter_task(ctx) str
+        +_L15_db_context(ctx) str
+        +_L16_format_rules(ctx) str
+        +_L17_final_wrap(ctx) str
+    }
+
+    class DbPipeline {
+        +DatabaseManager db
+        +read_before_write(project_dir: str, chapter: int, task: str) DbContext
+        +write_after_write(project_dir: str, chapter: int, content: str, state_updates: Dict) None
+        +read_character_states(project_dir: str) List~Dict~
+        +read_foreshadowing_threads(project_dir: str) List~Dict~
+        +write_chapter_output(project_dir: str, chapter: int, content: str) None
+        +write_character_states(project_dir: str, updates: List~Dict~) None
+        +write_foreshadowing_threads(project_dir: str, updates: List~Dict~) None
+        +record_rag_retrieval(project_dir: str, query: str, results: List) None
+    }
+
+    class DbContext {
+        +List~Dict~ character_states
+        +List~Dict~ foreshadowing_threads
+        +Dict~str,str~ settings_map
+        +to_prompt_text() str
+    }
+
+    class PanguHybridRAG {
+        +hybrid_search(query, top_k, vector_top_k, bm25_top_k, rerank_top_n) List~SearchResult~
+        +search_for_chapter(task: str, chapter: int) List~SearchResult~
+        +update_index(vector_data, index_data) None
+    }
+
+    class ProjectionRunner {
+        +run_projections(project_dir, chapter_num, content, task, mode) Dict
+        +run_and_index(project_dir, chapter_num, content, task, mode) Dict
+    }
+
+    class StoryContracts {
+        +build_master_setting(project_dir, mode, platform) str
+        +build_chapter_brief(project_dir, chapter, task, master_setting) str
+        +build_for_stage(project_dir, stage_id, chapter, task, mode, platform) str
+        +inject_contract_to_prompt(chapter_brief) str
+    }
+
+    class MemoryOrchestrator {
+        +build_memory_pack(chapter, task_type) MemoryPack
+        +build_for_pipeline(context: PipelineContext) MemoryPack
+        +commit_memory(chapter, content, extraction) None
+    }
+
+    class WriteGates {
+        +run_write_gate(project_dir, chapter, stage, content) GateReport
+        +gate_for_stage(project_dir, chapter, stage_id, content) GateReport
+    }
+
+    class BeatSheetGenerator {
+        +generate_beat_sheet(project_dir, chapter_num, task, mode, platform, call_ai_func, total_chapters) List~Dict~
+        +inject_beat_sheet(state, chapter_num) str
+        +build_and_inject_beat_sheet(project_dir, chapter, task, mode, platform) str
+    }
+
+    WritingPipeline *-- PipelineConfig : uses
+    WritingPipeline *-- PipelineContext : creates
+    WritingPipeline *-- PipelineResult : produces
+    WritingPipeline o-- BaseStage : registers
+    PipelineContext o-- StageOutput : stores
+
+    BaseStage <|-- W0AnchorStage
+    BaseStage <|-- W1SetupStage
+    BaseStage <|-- W2DraftStage
+    BaseStage <|-- W3QCStage
+    BaseStage <|-- W4PolishStage
+    BaseStage <|-- W5ExportStage
+
+    W2DraftStage ..> PromptBuilder : builds prompt
+    W4PolishStage ..> PromptBuilder : builds prompt
+    W1SetupStage ..> WriteGates : prewrite gate
+    W4PolishStage ..> WriteGates : precommit gate
+    W5ExportStage ..> WriteGates : postcommit gate
+    W4PolishStage ..> ProjectionRunner : post-write projection
+
+    PromptBuilder ..> StoryContracts : L10
+    PromptBuilder ..> MemoryOrchestrator : L11
+    PromptBuilder ..> PanguHybridRAG : L12
+    PromptBuilder ..> BeatSheetGenerator : L13
+    PromptBuilder ..> DbPipeline : L08/L09/L15
+
+    ProjectionRunner ..> PanguHybridRAG : update_index
+    W2DraftStage ..> DbPipeline : read_before_write
+    W5ExportStage ..> DbPipeline : write_after_write

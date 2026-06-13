@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>盘古AI Pipeline 监控</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:system-ui;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem}
+h1{font-size:2rem;margin-bottom:.5rem}
+.sub{color:#64748b;margin-bottom:2rem}
+.grid{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;max-width:900px}
+.card{background:#1e293b;border:2px solid #334155;border-radius:1rem;padding:1.5rem;width:120px;text-align:center;transition:all .3s}
+.card.active{border-color:#3b82f6;box-shadow:0 0 20px rgba(59,130,246,.3)}
+.card.done{border-color:#22c55e;opacity:.8}
+.card.error{border-color:#ef4444;box-shadow:0 0 20px rgba(239,68,68,.3)}
+.card .stage{font-size:1.5rem;font-weight:bold;margin-bottom:.5rem}
+.card .name{font-size:.8rem;color:#94a3b8;margin-bottom:.5rem}
+.card .time{font-size:.7rem;color:#64748b}
+.card .status{font-size:.7rem;margin-top:.3rem}
+.spin{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.meta{margin-top:2rem;display:flex;gap:2rem;color:#94a3b8}
+.meta span{color:#e2e8f0;font-weight:bold}
+#alert{background:#7f1d1d;color:#fca5a5;padding:.5rem 1rem;border-radius:.5rem;margin-top:1rem;display:none}
+#complete{background:#14532d;color:#86efac;padding:1rem 2rem;border-radius:1rem;margin-top:1.5rem;font-size:1.2rem;display:none}
+</style>
+</head>
+<body>
+<h1>盘古AI Pipeline 监控</h1>
+<p class="sub" id="info">等待任务...</p>
+<div class="grid" id="stages"></div>
+<div id="complete"></div>
+<div id="alert"></div>
+<div class="meta">
+  <div>耗时: <span id="elapsed">--</span></div>
+  <div>字数: <span id="words">--</span></div>
+</div>
+
+<script>
+const ws=new WebSocket(`ws://${location.host}`);
+const stages=['W0','W1','W2','W3','W4','W5'];
+const names={'W0':'锚定','W1':'检查','W2':'初稿','W3':'质检','W4':'精修','W5':'导出'};
+
+// 初始化卡片
+const grid=document.getElementById('stages');
+stages.forEach(s=>{
+  const card=document.createElement('div');
+  card.className='card'; card.id=`card-${s}`;
+  card.innerHTML=`<div class="stage">${s}</div><div class="name">${names[s]}</div><div class="time">--</div><div class="status">等待</div>`;
+  grid.appendChild(card);
+});
+
+ws.onmessage=e=>{
+  const msg=JSON.parse(e.data);
+  if(msg.type==='full_state')updateFull(msg.data);
+  if(msg.type==='stage_update')updateStage(msg.data);
+  if(msg.type==='complete')showComplete(msg.data);
+  if(msg.type==='alert')showAlert(msg.data);
+};
+
+function updateFull(state){
+  document.getElementById('info').textContent=`${state.project} 第${state.chapter}章 · ${state.mode}`;
+  state.stages.forEach(s=>{
+    const card=document.getElementById(`card-${s.id}`);
+    card.className=`card ${s.status==='running'?'active':''} ${s.status==='done'?'done':''} ${s.status==='error'?'error':''}`;
+    card.querySelector('.status').textContent=s.status==='done'?'✓':s.status==='running'?'⚡':s.status==='error'?'✗':'等待';
+    card.querySelector('.time').textContent=s.time?s.time+'s':'--';
+  });
+}
+
+function updateStage(d){
+  const card=document.getElementById(`card-${d.stage}`);
+  if(!card)return;
+  card.className=`card ${d.status==='running'?'active':''} ${d.status==='done'?'done':''} ${d.status==='error'?'error':''}`;
+  card.querySelector('.status').textContent=d.status==='done'?'✓':d.status==='running'?'⚡':d.status==='error'?'✗':'等待';
+  if(d.time)card.querySelector('.time').textContent=d.time+'s';
+}
+
+function showComplete(d){
+  const el=document.getElementById('complete');
+  el.style.display='block';
+  el.textContent=`Pipeline 完成 · ${d.words}字 · ${d.elapsed}秒`;
+  document.getElementById('words').textContent=d.words;
+  document.getElementById('elapsed').textContent=d.elapsed+'s';
+}
+
+function showAlert(d){
+  const el=document.getElementById('alert');
+  el.style.display='block'; el.textContent=d;
+  setTimeout(()=>el.style.display='none',5000);
+}
+</script>
+</body>
+</html>

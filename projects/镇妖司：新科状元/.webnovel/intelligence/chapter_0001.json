@@ -1,0 +1,88 @@
+{
+  "chapter": 1,
+  "project": "镇妖司：新科状元",
+  "analyzed_at": "2026-06-12 16:22:03",
+  "word_count": 3375,
+  "paragraph_count": 1,
+  "sentence_stats": {
+    "mean_len": 17.5,
+    "cv": 0.599,
+    "long_ratio": 0.123,
+    "max_consecutive_short": 6,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.237,
+    "mtld": 2768.0,
+    "simpson": 0.999,
+    "entropy": 10.58
+  },
+  "readability_score": {
+    "total": 75.0,
+    "grade": "B-中学",
+    "avg_strokes": 8.0
+  },
+  "style_vector": [
+    0.2788,
+    0.5989,
+    0.1229,
+    0.2367,
+    0.4607,
+    1.0,
+    1.0,
+    0.7476,
+    0.0182,
+    0.1641,
+    0.2407,
+    0.4668,
+    0.5726,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1532,
+    0.0511
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 179.0,
+    "complexity": 1.0,
+    "mean_valence": -0.0,
+    "energy_bands": {
+      "低频": 0.15730337078651677,
+      "中频": 0.16853932584269657,
+      "高频": 0.6741573033707866
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 6.0,
+    "peak_position": 0.0,
+    "mean_tension": 6.0,
+    "pacing_quality": 0.2
+  },
+  "rhythm_analysis": {
+    "primary_period": 0.0,
+    "consistency": 0.0,
+    "is_mechanistic": false,
+    "is_chaotic": true
+  },
+  "character_network": {
+    "most_central": "沈夜",
+    "density": 0.2,
+    "excessive_dominance": "沈夜",
+    "isolated": [
+      "着嗓子",
+      "见这些",
+      "当然知"
+    ]
+  },
+  "foreshadow_health": {},
+  "quality_posterior": 0.7542431646057071,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.44999999999999996,
+  "reader_retention_est": 0.05447680459083438,
+  "risk_flags": [],
+  "audit_opinion": "CLEAN — 无显著风险",
+  "recommendation": "节奏需要张弛调整——峰值附近插入'呼吸'段",
+  "next_chapter_advice": "峰值偏前——下章注意把高潮放在65-85%位置"
+}

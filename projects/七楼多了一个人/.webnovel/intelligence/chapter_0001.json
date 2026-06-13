@@ -1,0 +1,81 @@
+{
+  "chapter": 1,
+  "project": "七楼多了一个人",
+  "analyzed_at": "2026-06-12 21:09:21",
+  "word_count": 1546,
+  "paragraph_count": 1,
+  "sentence_stats": {
+    "mean_len": 8.0,
+    "cv": 0.664,
+    "long_ratio": 0.012,
+    "max_consecutive_short": 16,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.271,
+    "mtld": 1219.2,
+    "simpson": 0.998,
+    "entropy": 9.45
+  },
+  "readability_score": {
+    "total": 61.0,
+    "grade": "B-中学",
+    "avg_strokes": 7.6
+  },
+  "style_vector": [
+    0.0667,
+    0.664,
+    0.012,
+    0.2709,
+    0.456,
+    1.0,
+    1.0,
+    0.724,
+    0.0,
+    0.2129,
+    0.3237,
+    0.5451,
+    0.6218,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.017,
+    0.0511
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 167.0,
+    "complexity": 0.0,
+    "mean_valence": 0.0,
+    "energy_bands": {}
+  },
+  "tension_envelope": {
+    "peak_value": 5.4,
+    "peak_position": 0.0,
+    "mean_tension": 5.4,
+    "pacing_quality": 0.2
+  },
+  "rhythm_analysis": {
+    "primary_period": 17.0,
+    "consistency": 0.339,
+    "is_mechanistic": false,
+    "is_chaotic": false
+  },
+  "character_network": {},
+  "foreshadow_health": {},
+  "quality_posterior": 0.7542431646057071,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.8,
+  "reader_retention_est": 0.07043560644014599,
+  "risk_flags": [
+    {
+      "level": "ORANGE",
+      "msg": "AI风险偏高 (0.80)",
+      "detail": "连续短句=16"
+    }
+  ],
+  "audit_opinion": "QUALIFIED — 1个关注项",
+  "recommendation": "增加句长变化，减少连续短句; 节奏需要张弛调整——峰值附近插入'呼吸'段",
+  "next_chapter_advice": "峰值偏前——下章注意把高潮放在65-85%位置"
+}

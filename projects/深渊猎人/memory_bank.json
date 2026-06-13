@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "project_dir": "D:\\study\\近思录\\小说\\盘古AI\\projects\\深渊猎人",
+  "last_updated": "2026-06-10 15:30:01",
+  "chapters": {
+    "1": {
+      "foreshadowing": [],
+      "characters": {
+        "沈渊蹲": {
+          "location": "",
+          "mood": "",
+          "key_action": "在城西废墟的阴影里"
+        },
+        "弱的温度": {
+          "location": "",
+          "mood": "",
+          "key_action": "在碎片深处搏动"
+        },
+        "十八岁干": {
+          "location": "",
+          "mood": "",
+          "key_action": "到二十六岁"
+        },
+        "上的旧伤": {
+          "location": "",
+          "mood": "",
+          "key_action": "在每次阴雨天都会准时提醒他"
+        },
+        "转身就": {
+          "location": "",
+          "mood": "",
+          "key_action": "跑。他听见身后传来摔倒声"
+        },
+        "个女人趴": {
+          "location": "",
+          "mood": "",
+          "key_action": "在碎石堆上"
+        },
+        "她已经不": {
+          "location": "",
+          "mood": "",
+          "key_action": "到二十米"
+        },
+        "手掌": {
+          "location": "",
+          "mood": "",
+          "key_action": "在她腋窝下扣死"
+        },
+        "跄着往前": {
+          "location": "",
+          "mood": "",
+          "key_action": "跑，虫潮的腥臭味从身后扑来"
+        },
+        "的躯体堵": {
+          "location": "",
+          "mood": "",
+          "key_action": "在街道正中央"
+        }
+      },
+      "settings": [],
+      "relationships": [],
+      "events": [
+        {
+          "event": "黄昏时分，沈渊蹲在城西废墟的阴影里，指尖触碰一块碎裂的蚀物残骸，微弱的温度在碎片深处搏动——那是能量还没完全消散的迹象。",
+          "significance": "high"
+        },
+        {
+          "event": "远处街道拐角涌出一片黑灰色的潮水——不是水，是数以千计拳头大小的蚀虫，六条节肢翻卷着刨开柏油路面，啃噬声像千万把剪刀同时撕扯布料。",
+          "significance": "medium"
+        },
+        {
+          "event": "沈渊没有思考。",
+          "significance": "medium"
+        },
+        {
+          "event": "三米高的躯体堵在街道正中央，表皮像被硫酸腐蚀过的橡胶，布满脓液般的光泽。",
+          "significance": "medium"
+        },
+        {
+          "event": "女人还在往前跑，沈渊却停住了。",
+          "significance": "medium"
+        }
+      ],
+      "extracted_at": "2026-06-10 15:30:01"
+    }
+  },
+  "active_foreshadowing": [],
+  "character_states": {
+    "沈渊蹲": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在城西废墟的阴影里"
+    },
+    "弱的温度": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在碎片深处搏动"
+    },
+    "十八岁干": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "到二十六岁"
+    },
+    "上的旧伤": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在每次阴雨天都会准时提醒他"
+    },
+    "转身就": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "跑。他听见身后传来摔倒声"
+    },
+    "个女人趴": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在碎石堆上"
+    },
+    "她已经不": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "到二十米"
+    },
+    "手掌": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在她腋窝下扣死"
+    },
+    "跄着往前": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "跑，虫潮的腥臭味从身后扑来"
+    },
+    "的躯体堵": {
+      "location": "",
+      "mood": "",
+      "power_level": "",
+      "last_chapter": 1,
+      "key_action": "在街道正中央"
+    }
+  },
+  "setting_log": {
+    "locked_rules": [],
+    "pending_rules": []
+  },
+  "chapter_summaries": {
+    "1": "黄昏时分，沈渊蹲在城西废墟的阴影里，指尖触碰一块碎裂的蚀物残骸，微弱的温度在碎片深处搏动——那是能量还没完全消散的迹象。；远处街道拐角涌出一片黑灰色的潮水——不是水，是数以千计拳头大小的蚀虫，六条节肢翻卷着刨开柏油路面，啃噬声像千万把剪刀同时撕扯布料。；沈渊没有思考。",
+    "999": {
+      "task": "测试投影模块",
+      "summary": "沈渊睁开眼睛，发现自己还活着。深渊之眼在他体内微微发热。他站起身来，决定接受这份力量。",
+      "word_count": 43,
+      "timestamp": "2026-06-10T20:54:19.447928"
+    }
+  },
+  "subplot_board": {
+    "诉他这个空间的秘密": "进行中"
+  },
+  "character_cognition": {},
+  "character_personality": {},
+  "emotional_states": {},
+  "relationship_graph": [],
+  "timeline": [
+    {
+      "chapter": 1,
+      "event": "黄昏时分，沈渊蹲在城西废墟的阴影里，指尖触碰一块碎裂的蚀物残骸，微弱的温度在碎片深处搏动——那是能量还没完全消散的迹象。",
+      "significance": "high"
+    },
+    {
+      "chapter": 1,
+      "event": "远处街道拐角涌出一片黑灰色的潮水——不是水，是数以千计拳头大小的蚀虫，六条节肢翻卷着刨开柏油路面，啃噬声像千万把剪刀同时撕扯布料。",
+      "significance": "medium"
+    },
+    {
+      "chapter": 1,
+      "event": "沈渊没有思考。",
+      "significance": "medium"
+    },
+    {
+      "chapter": 1,
+      "event": "三米高的躯体堵在街道正中央，表皮像被硫酸腐蚀过的橡胶，布满脓液般的光泽。",
+      "significance": "medium"
+    },
+    {
+      "chapter": 1,
+      "event": "女人还在往前跑，沈渊却停住了。",
+      "significance": "medium"
+    }
+  ],
+  "psychological_states": {}
+}

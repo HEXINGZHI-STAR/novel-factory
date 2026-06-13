@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: pangu-backend
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+# 盘古AI专属配置
+pangu:
+  # Python血液层地址（Flask微服务）
+  python-math-url: http://localhost:5000
+  python-engine-url: http://localhost:5001
+  # 项目根目录
+  project-root: ../projects
+  knowledge-root: ../knowledge
+  # Python解释器路径
+  python-path: python
+
+# 日志
+logging:
+  level:
+    com.pangu: DEBUG
+    org.springframework.web: INFO

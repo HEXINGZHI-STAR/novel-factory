@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-盘古写作系统增强版
-集成了小说参考库数据库功能
+盘古参考库浏览器 (Database Browser)
+
+定位: 4,466本参考书的浏览/搜索/分析工具。不是写作入口。
+写作入口: pangu_workshop.py / pangu_workshop_smart.py
+
+主要功能:
+  - 按题材/平台/评分浏览参考书
+  - 查看书籍章节和分析结果
+  - 生成参考提示词
+  - 数据库统计
 """
 
 import os
@@ -60,12 +68,11 @@ def load_config():
         "retry_times": 3,
     }
     
-    # 兼容性 - 如果没设置Key，先保留用户之前的，但警告
     if not config["api_key"]:
         print("⚠️  警告: 未设置 DEEPSEEK_API_KEY 环境变量")
-        print("   建议在 .env 文件中设置，或使用环境变量")
-        # 暂时保留旧的，但不推荐
-        config["api_key"] = "sk-d0a65c094b53413d8712e93c364ebeea"
+        print("   Windows 命令行: set DEEPSEEK_API_KEY=你的key")
+        print("   PowerShell: $env:DEEPSEEK_API_KEY='你的key'")
+        print("   或者在 .env 文件中设置")
     
     return config
 

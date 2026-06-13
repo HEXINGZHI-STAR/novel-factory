@@ -1,0 +1,22 @@
+[
+  {
+    "event_type": "world_rule_revealed",
+    "trigger": "真相",
+    "chapter": 10,
+    "context": "走到她面前，“等你准备好。”\n“准备好什么？”\n“准备好看到真相。”她爸伸出手，手指碰到她的左眼，“你看到的那些东西，不是鬼，不是债。是记忆。”\n姜渺的瞳孔收缩。\n",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  },
+  {
+    "event_type": "location_changed",
+    "trigger": "离开",
+    "chapter": 10,
+    "context": "拖在地上。\n“你有选择。”老人的声音越来越远，“打开它，或者离开。但如果你打开它，你就再也回不来了。”\n姜渺的嘴唇在发抖。\n“里面有什么？”\n“你爸。”\n老人的声音",
+    "routes": [
+      "state",
+      "index"
+    ]
+  }
+]

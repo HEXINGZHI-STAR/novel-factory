@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "title": "深渊猎人",
+    "genre": "都市_power",
+    "platform": "qimao",
+    "summary": "2077年，深渊裂缝撕裂地球。底层拾荒者沈渊被裂缝吞噬后觉醒禁忌能力'深渊之眼'——能看穿蚀物弱点，但每次使用都会吞噬自己的记忆。他必须在变强和变成另一个人之间抉择，同时揭露裂缝背后的人为真相。",
+    "author": "盘古AI",
+    "mode": "urban_power",
+    "current_chapter": 0,
+    "total_chapters": 90,
+    "version": "v1.0"
+  },
+  "progress": {
+    "current_chapter": 1,
+    "total_words": 3499,
+    "last_update": "2026-06-10"
+  },
+  "characters": {
+    "沈渊": {
+      "role": "主角",
+      "identity": "下城拾荒者→深渊猎人",
+      "personality": "冷硬、护短、嘴毒心善、绝不欠人情",
+      "combat_style": "深渊之眼预判+一击必杀",
+      "signature_move": "使用深渊之眼时左眼变黑",
+      "power_level": "深渊之眼（禁忌能力）",
+      "rage_trigger": "有人伤害他在乎的人",
+      "last_chapter": 999
+    },
+    "叶青禾": {
+      "role": "女主",
+      "identity": "银级猎人/猎人公会会长之女",
+      "personality": "倔强、正义感强、不服输",
+      "ability": "风系共鸣",
+      "note": "被安排的人生vs自己的选择"
+    },
+    "老周": {
+      "role": "导师/情报贩子",
+      "identity": "下城情报贩子/前铂级猎人",
+      "personality": "圆滑、看似市侩实则重义",
+      "note": "隐藏的过去"
+    },
+    "顾长明": {
+      "role": "主要反派",
+      "identity": "钻石级猎人/深渊研究所所长",
+      "personality": "温和外表、冷酷内核",
+      "note": "为大局可牺牲一切，裂缝的始作俑者"
+    }
+  },
+  "foreshadowing": [
+    {
+      "id": "F001",
+      "content": "深渊之眼的上一任持有者已疯",
+      "planted_chapter": 1,
+      "status": "active"
+    },
+    {
+      "id": "F002",
+      "content": "裂缝深处有人类实验痕迹",
+      "planted_chapter": 1,
+      "status": "planned"
+    },
+    {
+      "id": "F003",
+      "content": "老周隐藏的铂级猎人身份",
+      "planted_chapter": 1,
+      "status": "planned"
+    },
+    {
+      "id": "F004",
+      "content": "蚀主与深渊之眼的联系",
+      "planted_chapter": 1,
+      "status": "planned"
+    },
+    {
+      "id": "F005",
+      "content": "顾长明主导的深渊实验",
+      "planted_chapter": 1,
+      "status": "planned"
+    }
+  ],
+  "setting_log": [
+    {
+      "rule": "深渊裂缝共7条主裂缝",
+      "status": "locked"
+    },
+    {
+      "rule": "蚀物分1-5阶",
+      "status": "locked"
+    },
+    {
+      "rule": "猎人分铜银金铂钻5级",
+      "status": "locked"
+    },
+    {
+      "rule": "深渊之眼每次使用吞噬一段记忆",
+      "status": "locked"
+    },
+    {
+      "rule": "壁垒城分上城和下城",
+      "status": "locked"
+    }
+  ],
+  "chapter_meta": {
+    "chapter_1": {
+      "task": "开篇：蚀潮来袭，沈渊觉醒\n\n场景：壁垒城下城，废墟拾荒区\n时间：黄昏\n\n核心事件：\n1. 沈渊在下城",
+      "created_at": "2026-06-10",
+      "ai_generated": true,
+      "engine_version": "workflow_v2",
+      "word_count": 3499
+    },
+    "999": {
+      "word_count": 43,
+      "timestamp": "2026-06-10T20:54:19.201683",
+      "mode": "mystery"
+    }
+  },
+  "beat_sheet": {
+    "1": [
+      {
+        "beat": "诡异开场",
+        "goal": "主角觉醒深渊之眼 -- 以反常现象/诡异细节开场",
+        "mood": "不安/好奇",
+        "words": 300
+      },
+      {
+        "beat": "规则揭示",
+        "goal": "部分展示规则，但留下关键缺失",
+        "mood": "紧张/困惑",
+        "words": 500
+      },
+      {
+        "beat": "第一次违规",
+        "goal": "有人违反规则，展示后果",
+        "mood": "恐惧/震惊",
+        "words": 600
+      },
+      {
+        "beat": "伏笔推进",
+        "goal": "推进伏笔「未命名伏笔」的线索",
+        "mood": "悬念/暗示",
+        "words": 300
+      },
+      {
+        "beat": "新规则出现",
+        "goal": "发现更深层规则，悬念升级",
+        "mood": "毛骨悚然",
+        "words": 400
+      }
+    ]
+  }
+}

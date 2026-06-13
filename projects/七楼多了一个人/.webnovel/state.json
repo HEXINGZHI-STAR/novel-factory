@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "title": "七楼多了一个人",
+    "genre": "悬疑",
+    "platform": "qimao",
+    "target_words": 40000,
+    "target_chapters": 20,
+    "core_selling_points": "七猫短文·日常恐怖·电梯里多了一个人"
+  },
+  "progress": {
+    "current_chapter": 0,
+    "total_words": 0,
+    "current_volume": 1
+  },
+  "characters": {
+    "protagonist": {
+      "name": "林远",
+      "current_state": "夜班保安",
+      "last_chapter": 0
+    },
+    "key_characters": []
+  },
+  "foreshadowing": {
+    "active_threads": []
+  },
+  "setting_log": {
+    "locked_rules": []
+  },
+  "review_checkpoints": [],
+  "chapter_meta": {}
+}

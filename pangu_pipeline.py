@@ -6,6 +6,9 @@
 你只需要输入方向，系统自动完成:
   ① 搜参考书 → ② 分析风格 → ③ 出提示词 → ④ 调DeepSeek生成 → ⑤ 归档
 
+⚠️ DEPRECATED: 此文件已非主力入口，流水线功能已集成到 pangu_core/pipeline.py (WritingPipeline)。
+   唯一入口: python pangu_workshop.py write --project <项目> --chapter <N>
+
 用法:
   python pangu_pipeline.py "玄幻爽文，主角重生回到高考那年，用未来记忆逆袭"
 
@@ -43,7 +46,7 @@ except ImportError:
     sys.exit(1)
 
 # ── 配置 ──
-API_KEY = os.getenv("DEEPSEEK_API_KEY", "sk-d0a65c094b53413d8712e93c364ebeea")
+API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
 API_URL = os.getenv("OPENAI_BASE_URL", "https://api.deepseek.com/v1") + "/chat/completions"
 MODEL = os.getenv("AI_MODEL", "deepseek-chat")
 PROJECTS_DIR = BASE_DIR / "projects"

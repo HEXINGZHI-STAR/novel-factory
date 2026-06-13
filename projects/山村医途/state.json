@@ -1,0 +1,19 @@
+{
+  "title": "山村医途",
+  "current_chapter": 1,
+  "total_chapters": 0,
+  "mode": "healing_life_v2",
+  "word_count": 2041,
+  "created_at": "2026-06-11",
+  "last_updated": "2026-06-11",
+  "chapters": {
+    "1": {
+      "title": "山村医途",
+      "file": "正文/第1章_山村医途.txt",
+      "word_count": 2041,
+      "status": "completed",
+      "emotion_arc": "前3后1",
+      "quality_score": 85
+    }
+  }
+}

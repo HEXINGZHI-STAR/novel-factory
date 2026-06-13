@@ -1,0 +1,13 @@
+[
+  {
+    "event_type": "character_state_changed",
+    "trigger": "变化",
+    "chapter": 4,
+    "context": "在她旁边，手指悬在勒痕上方，没碰。“说明勒的时候，手的位置有变化。”\n“不是。”姜渺摇头，“是凶器的问题。”\n她站起来，走到厨房。厨房的抽屉半开着，里面是一堆杂物—",
+    "routes": [
+      "state",
+      "memory",
+      "vector"
+    ]
+  }
+]

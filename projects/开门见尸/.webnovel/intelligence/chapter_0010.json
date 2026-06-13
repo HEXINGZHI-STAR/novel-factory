@@ -1,0 +1,96 @@
+{
+  "chapter": 10,
+  "project": "开门见尸",
+  "analyzed_at": "2026-06-13 11:21:10",
+  "word_count": 2904,
+  "paragraph_count": 1,
+  "sentence_stats": {
+    "mean_len": 14.5,
+    "cv": 0.674,
+    "long_ratio": 0.092,
+    "max_consecutive_short": 5,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.185,
+    "mtld": 903.9,
+    "simpson": 0.998,
+    "entropy": 10.04
+  },
+  "readability_score": {
+    "total": 66.0,
+    "grade": "B-中学",
+    "avg_strokes": 7.9
+  },
+  "style_vector": [
+    0.2117,
+    0.6739,
+    0.0919,
+    0.1855,
+    0.3719,
+    1.0,
+    1.0,
+    0.3511,
+    0.0,
+    0.2891,
+    0.2478,
+    0.7171,
+    0.8509,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.223,
+    0.0496
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 5.0,
+    "complexity": 0.93,
+    "mean_valence": 0.01,
+    "energy_bands": {
+      "低频": 0.1624185538876,
+      "中频": 0.16656119452892668,
+      "高频": 0.6710202515834729
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 5.5,
+    "peak_position": 0.0,
+    "mean_tension": 5.5,
+    "pacing_quality": 0.2
+  },
+  "rhythm_analysis": {
+    "primary_period": 9.0,
+    "consistency": 0.171,
+    "is_mechanistic": false,
+    "is_chaotic": false
+  },
+  "character_network": {
+    "most_central": "姜渺",
+    "density": 0.0,
+    "excessive_dominance": "姜渺",
+    "isolated": [
+      "姜渺",
+      "姜渺",
+      "沈让",
+      "赵秀兰",
+      "沈让没"
+    ]
+  },
+  "foreshadow_health": {},
+  "quality_posterior": 0.7542431646057071,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.6,
+  "reader_retention_est": 0.09462005755543715,
+  "risk_flags": [
+    {
+      "level": "ORANGE",
+      "msg": "AI风险偏高 (0.60)",
+      "detail": "连续短句=5"
+    }
+  ],
+  "audit_opinion": "QUALIFIED — 1个关注项",
+  "recommendation": "增加句长变化，减少连续短句; 节奏需要张弛调整——峰值附近插入'呼吸'段",
+  "next_chapter_advice": "峰值偏前——下章注意把高潮放在65-85%位置"
+}

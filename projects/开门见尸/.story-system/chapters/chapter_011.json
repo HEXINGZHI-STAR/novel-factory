@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 11
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "第11章正文\n【本章约束】章末钩子类型: 悬念；注意增加句长变化，避免连续短句；峰值偏前——下章注意把高潮放在65-85%位置；⚠ 必须推进或回收伏笔: 如果她当时说了呢？"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 26413
+  },
+  "override_allowed": {
+    "chapter_focus": "第11章正文\n【本章约束】章末钩子类型: 悬念；注意增加句长变化，避免连续短句；峰值偏前——下章注意把高潮放在65-85%位置；⚠ 必须推进或回收伏笔: 如果她当时说了呢？"
+  }
+}

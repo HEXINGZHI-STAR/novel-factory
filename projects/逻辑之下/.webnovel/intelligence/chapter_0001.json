@@ -1,0 +1,85 @@
+{
+  "chapter": 1,
+  "project": "逻辑之下",
+  "analyzed_at": "2026-06-12 09:48:04",
+  "word_count": 2241,
+  "paragraph_count": 61,
+  "sentence_stats": {
+    "mean_len": 13.3,
+    "cv": 0.753,
+    "long_ratio": 0.058,
+    "max_consecutive_short": 9,
+    "dialogue_ratio": 0.221
+  },
+  "diversity_stats": {
+    "char_ttr": 0.253,
+    "mtld": 1637.1,
+    "simpson": 0.998,
+    "entropy": 10.04
+  },
+  "readability_score": {
+    "total": 97.0,
+    "grade": "A-小学",
+    "avg_strokes": 7.8
+  },
+  "style_vector": [
+    0.1839,
+    0.7527,
+    0.0577,
+    0.2527,
+    0.4766,
+    1.0,
+    1.0,
+    0.2688,
+    0.0806,
+    0.2258,
+    0.2581,
+    0.4903,
+    0.6935,
+    0.0,
+    0.6961,
+    0.9344,
+    0.2661,
+    0.1508,
+    0.1183,
+    0.172
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 8.0,
+    "complexity": 1.0,
+    "mean_valence": -0.01,
+    "energy_bands": {
+      "低频": 0.16666666666666677,
+      "中频": 0.16666666666666677,
+      "高频": 0.6666666666666671
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 4.8,
+    "peak_position": 0.68,
+    "mean_tension": 3.4,
+    "pacing_quality": 1.0
+  },
+  "rhythm_analysis": {
+    "primary_period": 7.0,
+    "consistency": 0.151,
+    "is_mechanistic": false,
+    "is_chaotic": false
+  },
+  "character_network": {},
+  "foreshadow_health": {},
+  "quality_posterior": 0.8416164009371827,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.6,
+  "reader_retention_est": 0.058074273091555204,
+  "risk_flags": [
+    {
+      "level": "ORANGE",
+      "msg": "AI风险偏高 (0.60)",
+      "detail": "连续短句=9"
+    }
+  ],
+  "audit_opinion": "QUALIFIED — 1个关注项",
+  "recommendation": "增加句长变化，减少连续短句",
+  "next_chapter_advice": "按总纲章纲正常推进"
+}

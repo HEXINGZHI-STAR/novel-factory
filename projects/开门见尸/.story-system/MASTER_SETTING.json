@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "MASTER_SETTING",
+    "title": "开门见尸",
+    "genre": "通用",
+    "mode": "悬疑",
+    "platform": "qimao"
+  },
+  "master_constraints": {
+    "core_tone": "平衡节奏，爽感与悬念交替",
+    "pacing_strategy": "快节奏：500字入戏，章末强钩子，爽感>悬念>情感",
+    "locked_rules": []
+  },
+  "core_characters": {
+    "protagonist": {
+      "role": "",
+      "signature": "",
+      "personality": "",
+      "rage_trigger": ""
+    }
+  },
+  "active_foreshadowing": [],
+  "override_policy": {
+    "locked": [
+      "meta.genre",
+      "master_constraints.core_tone"
+    ],
+    "append_only": [
+      "active_foreshadowing"
+    ],
+    "override_allowed": [
+      "master_constraints.pacing_strategy"
+    ]
+  }
+}

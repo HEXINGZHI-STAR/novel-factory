@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 1
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "姜渺带客户看房，门关上后看到沙发上坐了一个中年男人——胸口被刺穿。她选择沉默。回店里。去精神病院看妈妈。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 0
+  },
+  "override_allowed": {
+    "chapter_focus": "姜渺带客户看房，门关上后看到沙发上坐了一个中年男人——胸口被刺穿。她选择沉默。回店里。去精神病院看妈妈。"
+  }
+}

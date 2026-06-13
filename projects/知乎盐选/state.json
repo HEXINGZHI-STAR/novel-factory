@@ -1,0 +1,26 @@
+{
+  "title": "知乎盐选专栏",
+  "description": "知乎盐选风格的观点类文章、故事连载和知识干货",
+  "created_at": "2026-06-11",
+  "last_updated": "2026-06-11",
+  "articles": {
+    "观点文章": [
+      {
+        "title": "为什么我们越来越难感到幸福？",
+        "file": "观点文章/为什么我们越来越难感到幸福.txt",
+        "word_count": 1500,
+        "category": "社会观察",
+        "status": "completed"
+      },
+      {
+        "title": "为什么你越努力，越容易陷入\"无效内卷\"？",
+        "file": "观点文章/为什么你越努力越容易陷入无效内卷.txt",
+        "word_count": 1500,
+        "category": "职场成长",
+        "status": "completed"
+      }
+    ],
+    "故事连载": [],
+    "知识干货": []
+  }
+}

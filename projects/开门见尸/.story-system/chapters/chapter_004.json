@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 4
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "沈让带姜渺去看第三个案发现场——这次的死者身上有她的名片。凶手开始给她留线索。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 5811
+  },
+  "override_allowed": {
+    "chapter_focus": "沈让带姜渺去看第三个案发现场——这次的死者身上有她的名片。凶手开始给她留线索。"
+  }
+}

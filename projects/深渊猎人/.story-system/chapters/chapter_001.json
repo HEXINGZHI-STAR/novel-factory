@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 1
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "蚀潮来袭"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [
+      "深渊之眼的上一任持有者已疯"
+    ],
+    "total_words": 3499
+  },
+  "override_allowed": {
+    "chapter_focus": "蚀潮来袭"
+  }
+}

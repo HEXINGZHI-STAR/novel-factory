@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 10
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "终章。姜渺走进自己的房间——她终于看到了自己房间的预知。窗帘被换了，那人站在窗前，背对她。她知道自己必须面对的是什么。结尾:落在画面/天气/物件上——不让读者想知道接下来发生什么，让读者想再读一遍。对话≥30%。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 44175
+  },
+  "override_allowed": {
+    "chapter_focus": "终章。姜渺走进自己的房间——她终于看到了自己房间的预知。窗帘被换了，那人站在窗前，背对她。她知道自己必须面对的是什么。结尾:落在画面/天气/物件上——不让读者想知道接下来发生什么，让读者想再读一遍。对"
+  }
+}

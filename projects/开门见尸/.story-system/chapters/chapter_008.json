@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 8
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "沈让找到姜兰被撕掉的病历最后一页——上面记录了姜兰入院时对医生说的话:我女儿也会看到的。求你们在她来找我的时候，告诉她真相。姜渺发现她妈一直在等她问。母女对话(对话≥35%)。章末:姜渺知道祖上是道士，那些\"东西\"是债。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 39321
+  },
+  "override_allowed": {
+    "chapter_focus": "沈让找到姜兰被撕掉的病历最后一页——上面记录了姜兰入院时对医生说的话:我女儿也会看到的。求你们在她来找我的时候，告诉她真相。姜渺发现她妈一直在等她问。母女对话(对话≥35%)。章末:姜渺知道祖上是道士"
+  }
+}

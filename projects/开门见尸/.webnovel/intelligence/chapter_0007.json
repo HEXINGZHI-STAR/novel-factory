@@ -1,0 +1,84 @@
+{
+  "chapter": 7,
+  "project": "开门见尸",
+  "analyzed_at": "2026-06-13 11:15:17",
+  "word_count": 3241,
+  "paragraph_count": 1,
+  "sentence_stats": {
+    "mean_len": 18.3,
+    "cv": 0.773,
+    "long_ratio": 0.187,
+    "max_consecutive_short": 3,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.229,
+    "mtld": 2548.7,
+    "simpson": 0.999,
+    "entropy": 10.56
+  },
+  "readability_score": {
+    "total": 68.0,
+    "grade": "B-中学",
+    "avg_strokes": 8.0
+  },
+  "style_vector": [
+    0.2959,
+    0.7733,
+    0.1867,
+    0.2292,
+    0.4098,
+    1.0,
+    1.0,
+    0.432,
+    0.0,
+    0.1841,
+    0.2254,
+    0.598,
+    0.6968,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.015,
+    0.0451
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 4.0,
+    "complexity": 0.87,
+    "mean_valence": 0.01,
+    "energy_bands": {
+      "低频": 0.16498193837279332,
+      "中频": 0.1672580914944238,
+      "高频": 0.6677599701327829
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 6.0,
+    "peak_position": 0.0,
+    "mean_tension": 6.0,
+    "pacing_quality": 0.2
+  },
+  "rhythm_analysis": {
+    "primary_period": 13.0,
+    "consistency": 0.168,
+    "is_mechanistic": false,
+    "is_chaotic": false
+  },
+  "character_network": {
+    "most_central": "姜渺",
+    "density": 0.6,
+    "excessive_dominance": "姜渺",
+    "isolated": []
+  },
+  "foreshadow_health": {},
+  "quality_posterior": 0.7542431646057071,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.3,
+  "reader_retention_est": 0.12331820140258112,
+  "risk_flags": [],
+  "audit_opinion": "CLEAN — 无显著风险",
+  "recommendation": "节奏需要张弛调整——峰值附近插入'呼吸'段",
+  "next_chapter_advice": "峰值偏前——下章注意把高潮放在65-85%位置"
+}

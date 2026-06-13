@@ -1,0 +1,107 @@
+{
+  "chapter": 5,
+  "project": "开门见尸",
+  "analyzed_at": "2026-06-12 14:57:07",
+  "word_count": 2551,
+  "paragraph_count": 1,
+  "sentence_stats": {
+    "mean_len": 16.6,
+    "cv": 0.707,
+    "long_ratio": 0.161,
+    "max_consecutive_short": 5,
+    "dialogue_ratio": 0.0
+  },
+  "diversity_stats": {
+    "char_ttr": 0.264,
+    "mtld": 2263.2,
+    "simpson": 0.999,
+    "entropy": 10.32
+  },
+  "readability_score": {
+    "total": 73.0,
+    "grade": "B-中学",
+    "avg_strokes": 7.9
+  },
+  "style_vector": [
+    0.2587,
+    0.7074,
+    0.1608,
+    0.2638,
+    0.4629,
+    1.0,
+    1.0,
+    0.4532,
+    0.0,
+    0.1479,
+    0.1765,
+    0.3893,
+    0.7467,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0859,
+    0.0859
+  ],
+  "emotion_spectrum": {
+    "dominant_period": 3.0,
+    "complexity": 1.0,
+    "mean_valence": 0.0,
+    "energy_bands": {
+      "低频": 0.15492957746478886,
+      "中频": 0.1690140845070424,
+      "高频": 0.6760563380281694
+    }
+  },
+  "tension_envelope": {
+    "peak_value": 5.5,
+    "peak_position": 0.0,
+    "mean_tension": 5.5,
+    "pacing_quality": 0.2
+  },
+  "rhythm_analysis": {
+    "primary_period": 0.0,
+    "consistency": 0.0,
+    "is_mechanistic": false,
+    "is_chaotic": true
+  },
+  "character_network": {
+    "most_central": "姜渺",
+    "density": 0.06,
+    "excessive_dominance": "姜渺",
+    "isolated": [
+      "她不知",
+      "她妈",
+      "上有一",
+      "她当时",
+      "派出所",
+      "你知",
+      "怎么知",
+      "周警官",
+      "你刚才",
+      "他知",
+      "上有几",
+      "个声音",
+      "咙里没",
+      "但她知",
+      "让你知",
+      "着话筒",
+      "如果他",
+      "站在楼",
+      "也就是",
+      "的儿子",
+      "现在的",
+      "年男人"
+    ]
+  },
+  "foreshadow_health": {},
+  "quality_posterior": 0.7542431646057071,
+  "quality_trend": "stable",
+  "ai_risk_score": 0.44999999999999996,
+  "reader_retention_est": 0.0823730582435497,
+  "risk_flags": [],
+  "audit_opinion": "CLEAN — 无显著风险",
+  "recommendation": "节奏需要张弛调整——峰值附近插入'呼吸'段",
+  "next_chapter_advice": "峰值偏前——下章注意把高潮放在65-85%位置"
+}

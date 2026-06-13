@@ -1,0 +1,27 @@
+{
+  "chapter": 7,
+  "timestamp": "2026-06-13T11:15:17.141721",
+  "content_length": 3366,
+  "results": {
+    "state": {
+      "applied": true,
+      "detail": "更新了0个角色状态"
+    },
+    "vector": {
+      "applied": false,
+      "detail": "'PanguRAG' object has no attribute 'add_chunk'"
+    },
+    "memory": {
+      "applied": false,
+      "detail": "memory_bank.json不存在"
+    },
+    "index": {
+      "applied": true,
+      "detail": "索引50个关键词"
+    },
+    "event": {
+      "applied": true,
+      "detail": "提取1个事件"
+    }
+  }
+}

@@ -1,23 +1,134 @@
 {
   "project_info": {
     "title": "镇妖司：新科状元",
-    "genre": "玄幻",
-    "platform": "qimao",
+    "genre": "悬疑",
+    "platform": "qidian",
+    "target_words": 1000000,
     "target_chapters": 100,
-    "target_words": 200000,
-    "concept": "新科状元被贬镇妖司，以读书人的逻辑杀妖，以朝堂的谋略破局",
-    "created_at": "2026-06-08 17:03:51",
-    "chapters_per_volume": 25
+    "core_selling_points": "状元斩妖·圣贤书即斩妖法·全员残废天团·朝堂皆妖巢·金手指即诅咒",
+    "created_at": "2026-06-12"
   },
   "progress": {
-    "current_chapter": 5,
-    "total_words": 15321
+    "current_chapter": 1,
+    "total_words": 2244,
+    "current_volume": 1
   },
-  "volume_plan": {
-    "volume_1": "入局卷：查灭门案→发现妖盟→首杀将级(1-18章)",
-    "volume_2": "破局卷：追查幕后→权力绞杀→金手指真相(19-36章)",
-    "volume_3": "反杀卷：朝廷内乱→残部反攻→身世之谜(37-54章)",
-    "volume_4": "定鼎卷：直面黑手→策反朝堂→斩杀天妖(55-72章)"
+  "characters": {
+    "protagonist": {
+      "name": "沈夜",
+      "current_state": "连中三元被贬镇妖司",
+      "last_chapter": 1
+    },
+    "key_characters": [
+      {
+        "name": "着嗓子",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 1
+      },
+      {
+        "name": "老头",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 1
+      },
+      {
+        "name": "见这些",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 1
+      },
+      {
+        "name": "当然知",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 1
+      },
+      {
+        "name": "你知",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 1
+      }
+    ]
   },
-  "pipeline_version": "1.0"
+  "foreshadowing": {
+    "active_threads": [
+      {
+        "id": "f001",
+        "planted_ch": 1,
+        "description": "他听见身后有人小声议论：“这是得罪谁了？",
+        "status": "open",
+        "resolved_ch": null
+      },
+      {
+        "id": "f002",
+        "planted_ch": 1,
+        "description": "”\n老头“噗”地笑出声，面条从鼻子里喷出来：“镇妖使？",
+        "status": "open",
+        "resolved_ch": null
+      },
+      {
+        "id": "f003",
+        "planted_ch": 1,
+        "description": "”\n老头放下碗，站起来，绕着沈夜转了一圈：“你知道镇妖使是干什么的吗？",
+        "status": "open",
+        "resolved_ch": null
+      }
+    ],
+    "last_updated": "2026-06-12 16:06:17"
+  },
+  "setting_log": {
+    "locked_rules": []
+  },
+  "review_checkpoints": [],
+  "chapter_meta": {
+    "1": {
+      "word_count": 3516,
+      "timestamp": "2026-06-12T16:22:03.430359",
+      "mode": "悬疑"
+    }
+  },
+  "lorebook": {
+    "着嗓子": {
+      "description": "（待补充）着嗓子，在Ch1首次出现，出现2次",
+      "triggers": [
+        "着嗓子"
+      ],
+      "priority": 5
+    },
+    "老头": {
+      "description": "（待补充）老头，在Ch1首次出现，出现2次",
+      "triggers": [
+        "老头"
+      ],
+      "priority": 5
+    },
+    "见这些": {
+      "description": "（待补充）见这些，在Ch1首次出现，出现1次",
+      "triggers": [
+        "见这些"
+      ],
+      "priority": 5
+    },
+    "当然知": {
+      "description": "（待补充）当然知，在Ch1首次出现，出现1次",
+      "triggers": [
+        "当然知"
+      ],
+      "priority": 5
+    },
+    "你知": {
+      "description": "（待补充）你知，在Ch1首次出现，出现1次",
+      "triggers": [
+        "你知"
+      ],
+      "priority": 5
+    }
+  },
+  "_meta": {
+    "src_boundary": true,
+    "canonical_source": "src/",
+    "last_gate_check": null
+  }
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "event_type": "world_rule_broken",
+    "trigger": "打破",
+    "chapter": 9,
+    "context": "债。”\n客厅里安静了三秒钟。\n沈让的手机忽然响了，尖锐的铃声打破了沉默。他掏出手机，看了一眼屏幕，脸色变了。\n“怎么了？”姜渺问。\n“又出事了。”沈让说，“城西，废",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  },
+  {
+    "event_type": "location_changed",
+    "trigger": "离开",
+    "chapter": 9,
+    "context": "失踪之前，给她留了一封信。信上说，如果他回不来，就让她带着我离开这里，越远越好。还说，以后我要是看到了什么不该看的东西，不要害怕，那是我们家欠下的债。”\n沈让的手指",
+    "routes": [
+      "state",
+      "index"
+    ]
+  }
+]

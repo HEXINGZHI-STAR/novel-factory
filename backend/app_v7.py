@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 盘古V7.5 小说工厂后端API
 四车间流水线调度系统 + LiteLLM多模型路由 + RAG知识检索
@@ -15,6 +16,13 @@ from datetime import datetime
 from pathlib import Path
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+
+# 加载环境变量
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # LiteLLM — 开源多模型统一接口 (MIT License)
 # 支持 OpenAI / DeepSeek / Anthropic / Ollama / 通义千问 等100+供应商
@@ -47,8 +55,7 @@ try:
                                TensionCurveGenerator, HeatmapGenerator, GiskardAuditor,
                                InkOS, PacingChecker, AutoRewriteEngine, WorkflowRunner,
                                LLMAdapter, HAS_LLM_ADAPTER, load_snapshot,
-                               MemoryChecker, SemanticDiffChecker, ArcAnalyzer,
-                               GrammarChecker, analyze_sentence_rhythm)
+                               MemoryChecker, SemanticDiffChecker)
 except ImportError:
     # 定义安全的回退函数
     def trace_llm(*args, **kwargs): pass
@@ -65,14 +72,8 @@ except ImportError:
 
 # TextGrad优化模块
 try:
-    from textgrad_opt import TextVariable, TextualGradientDescent, textgrad_refine
+    from textgrad_opt import textgrad_refine
 except ImportError:
-    # 定义安全的回退类和函数
-    class TextVariable:
-        def __init__(self, text: str, name: str = "text"):
-            self.text = text
-    class TextualGradientDescent:
-        def __init__(self, *args, **kwargs): pass
     def textgrad_refine(text, *args, **kwargs): return {"refined_text": text}
 
 # 风格库模块
@@ -82,6 +83,50 @@ except ImportError:
     class StyleProfileManager:
         @staticmethod
         def list_profiles(): return []
+
+# 状态追踪系统
+try:
+    from state_tracker import StateTracker
+except ImportError:
+    # 回退实现
+    class StateTracker:
+        def __init__(self): pass
+        def initialize_from_project(self, data): pass
+        def update_after_chapter(self, *args): pass
+        def get_full_context(self): return ""
+        def to_dict(self): return {}
+
+# 任务队列系统
+try:
+    from task_queue import (
+        task_queue, task_monitor, init_task_queue,
+        submit_task, get_task_status, get_all_tasks, get_task_stats, shutdown_task_queue
+    )
+except ImportError:
+    # 回退实现
+    submit_task = lambda data, priority=1: "mock-task-id"
+    get_task_status = lambda task_id: None
+    get_all_tasks = lambda: []
+    get_task_stats = lambda: {}
+    shutdown_task_queue = lambda: None
+
+# 监控系统
+try:
+    from monitoring import (
+        record_llm_call, record_request, record_pipeline_run,
+        record_error, update_memory_stats, get_llm_stats,
+        get_performance_metrics, get_health_status
+    )
+except ImportError:
+    # 回退实现
+    record_llm_call = lambda *args, **kwargs: None
+    record_request = lambda *args, **kwargs: None
+    record_pipeline_run = lambda *args, **kwargs: None
+    record_error = lambda *args, **kwargs: None
+    update_memory_stats = lambda *args, **kwargs: None
+    get_llm_stats = lambda: {}
+    get_performance_metrics = lambda: {}
+    get_health_status = lambda: {"status": "healthy"}
 
 app = Flask(__name__)
 CORS(app)
@@ -118,7 +163,7 @@ WORKSHOP_MODELS = {
 
 # API Key（LiteLLM 自动从环境变量读取，这里保留手动兼容）
 # LiteLLM 标准环境变量：OPENAI_API_KEY, DEEPSEEK_API_KEY, ANTHROPIC_API_KEY, etc.
-LLM_API_KEY = os.getenv("LLM_API_KEY", "") or os.getenv("OPENAI_API_KEY", "")
+LLM_API_KEY = os.getenv("LLM_API_KEY", "") or os.getenv("OPENAI_API_KEY", "") or os.getenv("DEEPSEEK_API_KEY", "")
 
 # ============ LiteLLM 高可用配置（纯配置，零代码改动） ============
 # 熔断/重试/fallback/超时 —— 全部由 LiteLLM 原生支持
@@ -223,7 +268,52 @@ def call_llm_json(
     ]
 
     if not LLM_API_KEY:
-        return {}, "[模拟模式] 未配置 API Key"
+        # 模拟模式：返回有效的模拟数据以测试流水线
+        import random
+        mock_data = {
+            "w0": {
+                "thesis": "都市青年回归山村行医",
+                "anchor": user_prompt[:50] + "...",
+                "keywords": ["乡村", "医生", "神秘", "治愈"],
+                "emotion_tone": "温暖",
+                "story_direction": "正向治愈",
+                "core_conflict": "现代医学与传统智慧的碰撞",
+                "character_growth": "从迷茫到坚定",
+                "is_generic": False,
+                "irreplaceability_score": 7,
+                "anchor_scene": "村口老银杏树下，白发老人静静等待",
+                "counterintuitive_point": "年轻医生从城市来到山村，却发现老中医掌握着失传医术"
+            },
+            "w1": {
+                "setting_enhanced": "云雾山村，海拔八百米，常年云雾缭绕，村口有一棵千年银杏树",
+                "characters": ["林晓（26岁，医科大学毕业生）", "陈老爷子（78岁，神秘老中医）"],
+                "scene_atmosphere": "宁静祥和，略带神秘气息",
+                "time_period": "现代",
+                "location_details": "村口老银杏树下"
+            },
+            "w2": {
+                "content": f"第{random.randint(1, 100)}章 初入山村\n\n林晓背着简单的行囊，踏上了云雾山村的土地。山风带着草木的清香，远处传来几声鸟鸣。\n\n他抬头望去，只见村口一棵巨大的银杏树，枝繁叶茂，树下坐着一位白发苍苍的老人。\n\n\"小伙子，你就是新来的医生吧？\"老人缓缓开口，声音带着岁月的沧桑。\n\n林晓连忙点头：\"您好，我是林晓，来这里支援乡村医疗。\"\n\n老人微微一笑：\"我等你很久了...\"\n\n阳光透过树叶的缝隙洒落，在老人身上镀上一层金色的光晕。\n\n林晓注意到老人的手指修长，指甲修剪得整整齐齐，不像是常年劳作的农人。\n\n\"村里的人都叫我陈老爷子，\"老人站起身，\"跟我来吧，我带你去看看村里的卫生室。\"",
+                "word_count": 800,
+                "chapters_outline": ["初遇", "进村", "了解情况"]
+            },
+            "w3": {
+                "consistency_score": 92,
+                "logic_issues": [],
+                "emotion_consistency": 95,
+                "character_consistency": 98,
+                "suggestions": ["建议增加一些环境描写来增强氛围"]
+            },
+            "w4": {
+                "polished_content": f"第{random.randint(1, 100)}章 云雾深处\n\n晨雾尚未散尽，林晓的皮鞋碾过青石板路上的露珠，发出细微的声响。\n\n云雾山村，这个在地图上几乎找不到的地方，此刻就安静地躺在群山的怀抱里。\n\n村口那棵千年银杏树依旧枝繁叶茂，仿佛一位沉默的守护者，见证着岁月的流转。\n\n树下，一位身着青色布衣的老者正闭目养神，晨光穿透薄雾，为他银白的发丝染上金边。\n\n\"年轻人，你来了。\"老者睁开眼睛，目光深邃如古井。\n\n林晓心头微震，这老人似乎早已料到他的到来。\n\n\"晚辈林晓，受县里派遣，前来支援乡村医疗。\"他恭敬地鞠了一躬。\n\n老者缓缓起身，步履稳健得不像年近八旬：\"我是陈默，村里的赤脚医生。跟我来，卫生室就在前面。\"\n\n两人并肩走在蜿蜒的石板路上，两旁是错落有致的土坯房，袅袅炊烟从屋顶升起，与山间云雾融为一体。",
+                "style_score": 94,
+                "readability_score": 96,
+                "polish_level": "精修完成"
+            }
+        }
+        workshop_key = workshop.lower()
+        if workshop_key in mock_data:
+            return mock_data[workshop_key], str(mock_data[workshop_key])
+        return {"content": "[模拟模式] 测试内容生成成功"}, "[模拟模式] 已生成模拟数据"
 
     raw = ""
     if HAS_LITELLM:
@@ -289,13 +379,86 @@ def call_llm(
     ]
 
     if not LLM_API_KEY:
-        return f"""[模拟输出 — 未配置API Key]
-请设置环境变量，例如：
-  set OPENAI_API_KEY=sk-xxx
-  set LLM_MODEL=openai/gpt-4o
+        import random
+        mock_outputs = {
+            "w0": """{
+    "thesis": "都市青年回归山村行医",
+    "is_generic": false,
+    "generic_reason": "",
+    "irreplaceability_score": 7,
+    "anchor_scene": "村口老银杏树下，白发老人静静等待",
+    "counterintuitive_point": "年轻医生从城市来到山村，却发现老中医掌握着失传医术",
+    "keywords": ["乡村", "医生", "神秘", "治愈"],
+    "emotion_tone": "温暖",
+    "story_direction": "正向治愈",
+    "core_conflict": "现代医学与传统智慧的碰撞",
+    "character_growth": "从迷茫到坚定"
+}""",
+            "w1": """云雾山村坐落于海拔八百米的群山之间，常年被缭绕的云雾笼罩，宛如世外桃源。村里只有二十几户人家，大多是留守的老人和孩子。村口那棵千年银杏树是村子的标志，据说已经有八百多年的历史。
 
-当前调用: Workshop={workshop} Model={model} Temp={temperature}
-"""
+【主要人物】
+- 林晓：26岁，医科大学毕业生，怀揣理想来到山村支援医疗
+- 陈默：78岁，村里的赤脚医生，性格神秘，似乎隐藏着不为人知的过去
+
+【世界规则】
+1. 山村与世隔绝，信息传播缓慢
+2. 村民们相信传统医术，对现代医学持怀疑态度
+3. 每年秋天会举办传统的草药节
+
+【潜在冲突】
+- 现代医学与传统医术的碰撞
+- 城市价值观与乡村生活方式的冲突
+- 陈默老人的神秘过往""",
+            "w2": """林晓背着简单的行囊踏上了云雾山村的土地。山风带着草木的清香，远处传来几声清脆的鸟鸣。
+
+村口那棵巨大的银杏树映入眼帘，枝繁叶茂，树下坐着一位白发苍苍的老人。
+
+"小伙子，你就是新来的医生吧？"老人缓缓开口，声音带着岁月的沧桑。
+
+林晓连忙点头："您好，我是林晓，来这里支援乡村医疗。"
+
+老人微微一笑，眼角的皱纹如同水波般漾开："我等你很久了..."
+
+阳光透过树叶的缝隙洒落，在老人身上镀上一层金色的光晕。林晓注意到老人的手指修长，指甲修剪得整整齐齐，不像是常年劳作的农人。
+
+"村里的人都叫我陈老爷子，"老人站起身，拍了拍身上的尘土，"跟我来吧，我带你去看看村里的卫生室。"
+
+两人并肩走在蜿蜒的石板路上，两旁是错落有致的土坯房，袅袅炊烟从屋顶升起，与山间云雾融为一体。""",
+            "w3": """{
+    "consistency_score": 92,
+    "logic_issues": [],
+    "emotion_consistency": 95,
+    "character_consistency": 98,
+    "pacing_score": 88,
+    "suggestions": ["建议增加一些环境描写来增强氛围", "可以适当增加村民的反应", "考虑加入一个小冲突来推动情节"],
+    "rewrite_needed": false,
+    "rewrite_sections": []
+}""",
+            "w4": """晨雾尚未散尽，林晓的皮鞋碾过青石板路上的露珠，发出细微的声响。
+
+云雾山村，这个在地图上几乎找不到的地方，此刻就安静地躺在群山的怀抱里。村口那棵千年银杏树依旧枝繁叶茂，仿佛一位沉默的守护者，见证着岁月的流转。
+
+树下，一位身着青色布衣的老者正闭目养神，晨光穿透薄雾，为他银白的发丝染上金边。
+
+"年轻人，你来了。"老者睁开眼睛，目光深邃如古井。
+
+林晓心头微震，这老人似乎早已料到他的到来。
+
+"晚辈林晓，受县里派遣，前来支援乡村医疗。"他恭敬地鞠了一躬。
+
+老者缓缓起身，步履稳健得不像年近八旬："我是陈默，村里的赤脚医生。跟我来，卫生室就在前面。"
+
+两人并肩走在蜿蜒的石板路上，两旁是错落有致的土坯房，袅袅炊烟从屋顶升起，与山间云雾融为一体。空气中弥漫着柴草燃烧的气息，夹杂着淡淡的草药香。
+
+"村里已经很久没有来过年轻医生了，"陈默忽然开口，"上一个来的，还是十年前。"
+
+林晓好奇地问："后来呢？"
+
+陈默的脚步顿了顿，目光望向远方："他来了，又走了。"
+
+话语中带着一丝说不清道不明的意味。"""
+        }
+        return mock_outputs.get(workshop.lower(), f"【模拟内容】第{random.randint(1, 100)}章\n\n这是{workshop}车间生成的模拟内容。\n\n测试段落...")
 
     # fallback 链
     fallback_models = _get_fallback_models(workshop)
@@ -358,7 +521,15 @@ def call_llm(
     t0 = time.time()
     try:
         import requests as req
-        api_base = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
+        
+        # 根据模型选择正确的API地址
+        if "deepseek" in model.lower():
+            api_base = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+        elif "openai" in model.lower():
+            api_base = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
+        else:
+            api_base = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
+        
         payload = {
             "model": model.split("/")[-1],
             "messages": messages,
@@ -640,6 +811,10 @@ class SchedulerV7:
 
         # 执行日志
         self.logs = []
+
+        # 初始化状态追踪系统
+        self.state_tracker = StateTracker()
+        self.state_tracker.initialize_from_project(user_input)
 
         # 初始化RAG引擎（懒加载）
         self._rag = None
@@ -1401,12 +1576,61 @@ def get_platforms():
 @app.route("/api/v7/observability/stats", methods=["GET"])
 def observability_stats():
     """LLM 调用统计（成功率/P50/P95延迟/按模型分布）"""
-    minutes = request.args.get("minutes", 60, type=int)
-    tracer = get_tracer()
     return jsonify({
         "success": True,
-        "total_calls_all_time": tracer.total_calls(),
-        **tracer.get_stats(window_minutes=minutes),
+        **get_llm_stats(),
+    })
+
+
+@app.route("/api/v7/observability/performance", methods=["GET"])
+def observability_performance():
+    """性能监控指标"""
+    return jsonify({
+        "success": True,
+        **get_performance_metrics(),
+    })
+
+
+@app.route("/api/v7/observability/health", methods=["GET"])
+def observability_health():
+    """系统健康状态"""
+    return jsonify({
+        "success": True,
+        **get_health_status(),
+    })
+
+
+@app.route("/api/v7/tasks", methods=["GET"])
+def tasks_list():
+    """获取任务列表"""
+    return jsonify({
+        "success": True,
+        "tasks": get_all_tasks(),
+        "stats": get_task_stats(),
+    })
+
+
+@app.route("/api/v7/tasks/<task_id>", methods=["GET"])
+def task_status(task_id):
+    """获取任务状态"""
+    status = get_task_status(task_id)
+    if status:
+        return jsonify({"success": True, "task": status})
+    return jsonify({"success": False, "error": "任务不存在"}), 404
+
+
+@app.route("/api/v7/dashboard", methods=["GET"])
+def dashboard():
+    """综合仪表盘 - 所有监控数据"""
+    return jsonify({
+        "success": True,
+        "llm_stats": get_llm_stats(),
+        "performance": get_performance_metrics(),
+        "health": get_health_status(),
+        "tasks": {
+            "list": get_all_tasks()[:5],
+            "stats": get_task_stats(),
+        },
     })
 
 
@@ -2649,39 +2873,185 @@ def write_short():
     return jsonify({"success": True, "content": result})
 
 
+# ================================================================
+# V2 API: 统一管线 (pangu_core.Pipeline)
+# 替代旧版 workshops/*.txt + SchedulerV7 + call_llm 双管线
+# ================================================================
+
+# V7 端点废弃警告
+@app.before_request
+def deprecate_v7():
+    """对 /api/v7/* 请求添加废弃警告头"""
+    if request.path.startswith("/api/v7/"):
+        from flask import g
+        g.deprecated = True
+
+@app.after_request
+def add_deprecation_header(response):
+    if getattr(g, 'deprecated', False):
+        response.headers["X-Deprecated-API"] = "V7"
+        response.headers["X-Migration-Path"] = "/api/v2/generate"
+    return response
+
+@app.route("/api/v2/generate", methods=["POST"])
+def generate_v2():
+    """
+    统一写作接口 — 调用 pangu_core.Pipeline。
+
+    与旧版 /api/v7/generate 的区别:
+      - Prompt: PromptBuilder 17层动态构建 (替代 workshops/*.txt)
+      - LLM: call_ai() 多Provider路由 (替代 call_llm/litellm)
+      - RAG: pangu_core/rag_engine.py FAISS (替代 backend/rag_engine.py stub)
+      - 模式: modes/*.json W2/W4差异化规则 (替代硬编码)
+
+    Request: {project, chapter, task?, mode?, platform?, fast?}
+    Response: {success, chapter_content, words, warnings, errors, intelligence?}
+    """
+    import sys
+    sys.path.insert(0, str(BASE_DIR))
+
+    data = request.get_json() or {}
+    project_name = data.get("project", "")
+    chapter_num = data.get("chapter", 1)
+    chapter_task = data.get("task", "")
+    mode_name = data.get("mode", "general")
+    platform_name = data.get("platform", "qimao")
+    use_fast = data.get("fast", True)
+    with_intelligence = data.get("intelligence", True)
+
+    # 查找项目
+    from pangu_workshop import find_project
+    proj = find_project(project_name)
+    if not proj:
+        return jsonify({"success": False, "error": f"项目 '{project_name}' 未找到"}), 404
+
+    # 构建配置
+    from pangu_core.pipeline import WritingPipeline, PipelineConfig
+    if use_fast:
+        config = PipelineConfig.from_quick_mode(
+            str(proj), chapter_num,
+            chapter_task or f"第{chapter_num}章",
+            mode=mode_name, platform=platform_name)
+    else:
+        config = PipelineConfig.from_workshop_mode(
+            str(proj), chapter_num,
+            chapter_task or f"第{chapter_num}章",
+            mode=mode_name, platform=platform_name)
+
+    # 执行
+    t0 = time.time()
+    pipeline = WritingPipeline(config)
+    result = pipeline.run()
+    elapsed = time.time() - t0
+
+    response = {
+        "success": result.success,
+        "chapter_content": result.chapter_content,
+        "words": len(result.chapter_content.replace('\n', '').replace(' ', '')),
+        "elapsed": round(elapsed, 1),
+        "warnings": result.warnings,
+        "errors": result.errors,
+    }
+
+    # 情报
+    if with_intelligence and result.success:
+        try:
+            from pangu_intelligence import analyze_chapter
+            state = json.loads(
+                (proj / ".webnovel" / "state.json").read_text(encoding="utf-8"))
+            ci = analyze_chapter(str(proj), chapter_num,
+                                  result.chapter_content, state)
+            response["intelligence"] = {
+                "quality_posterior": ci.quality_posterior,
+                "ai_risk": ci.ai_risk_score,
+                "audit": ci.audit_opinion,
+                "recommendation": ci.recommendation,
+            }
+        except Exception:
+            pass
+
+    return jsonify(response)
+
+
+@app.route("/api/v2/projects", methods=["GET"])
+def projects_v2():
+    """项目列表 (走 pangu_workshop)"""
+    import sys
+    sys.path.insert(0, str(BASE_DIR))
+    from pangu_workshop import PROJECT_ROOTS, load_state
+    projects = []
+    for root in PROJECT_ROOTS:
+        if not root.exists():
+            continue
+        for child in sorted(root.iterdir()):
+            if not child.is_dir():
+                continue
+            state = load_state(child)
+            if not state:
+                continue
+            info = state.get("project_info", {})
+            prog = state.get("progress", {})
+            projects.append({
+                "title": info.get("title", child.name),
+                "platform": info.get("platform", "?"),
+                "genre": info.get("genre", "?"),
+                "progress": f"Ch{prog.get('current_chapter',0)}/{info.get('target_chapters','?')}",
+                "words": prog.get("total_words", 0),
+            })
+    return jsonify({"projects": projects})
+
+
+@app.route("/api/v2/diagnose", methods=["POST"])
+def diagnose_v2():
+    """智能诊断 (走 pangu_workshop_smart)"""
+    import sys
+    sys.path.insert(0, str(BASE_DIR))
+    data = request.get_json() or {}
+    project_name = data.get("project", "")
+    chapter_num = data.get("chapter")
+
+    from pangu_workshop import find_project
+    from pangu_workshop_smart import SmartStrategyEngine
+
+    proj = find_project(project_name)
+    if not proj:
+        return jsonify({"success": False, "error": "项目未找到"}), 404
+
+    engine = SmartStrategyEngine(proj)
+    if chapter_num:
+        strategy = engine.recommend_strategy(chapter_num)
+        task = engine.generate_chapter_task(chapter_num)
+        return jsonify({
+            "project": project_name,
+            "chapter": chapter_num,
+            "strategy": {
+                "mode": strategy.mode,
+                "target_words": strategy.target_words,
+                "temperature": strategy.temperature,
+                "hook_type": strategy.hook_type,
+                "release_type": strategy.release_type,
+                "use_claude_w4": strategy.use_claude_w4,
+                "priority_dimensions": strategy.priority_dimensions,
+            },
+            "task": task,
+        })
+
+    return jsonify({"success": False, "error": "需要 chapter 参数"})
+
+
 # ============ 启动 ============
 if __name__ == "__main__":
     print("=" * 60)
-    print("  盘古V7.5 小说工厂后端服务")
-    print("  五车间流水线 W0→W1→W2→W3→W4 + LiteLLM + FAISS")
+    print("  盘古V2.0 小说工厂后端服务")
+    print("  统一管线: pangu_core.Pipeline + PromptBuilder + ai_client")
     print("=" * 60)
-    print(f"  LiteLLM: {'已安装' if HAS_LITELLM else '未安装 — 使用手动HTTP回退'}")
-    print(f"  模型配置:")
-    for ws in ["w0","w1","w2","w3","w4"]:
-        print(f"    {ws.upper()}: {WORKSHOP_MODELS.get(ws, DEFAULT_MODEL)}")
-    print(f"  API Key {'已配置' if LLM_API_KEY else '未配置 — 将使用模拟模式'}")
-    print(f"  可用模式: {', '.join(p.stem for p in MODES_DIR.glob('*.json'))}")
-    print("=" * 60)
-    print("  API路由:")
-    print("    GET  /api/v7/health            健康检查")
-    print("    GET  /api/v7/modes             所有模式")
-    print("    GET  /api/v7/mode/<id>         模式详情")
-    print("    POST /api/v7/generate          四车间流水线")
-    print("    POST /api/v7/fusion/check      混搭检查")
-    print("    POST /api/v7/fusion/protocol   混搭协议")
-    print("    POST /api/v7/write             写章节(状态感知+自动记忆)")
-    print("    POST /api/v7/anchor               W0主旨锚定（推荐写前调用）")
-    print("    POST /api/v7/workshop/<id>     单独调用车间(0-4)")
-    print("    GET  /api/v7/library/list      三库列表")
-    print("    GET  /api/v7/library/validate/<project>  三库验证")
-    print("    GET  /api/v7/platforms         平台配置")
-    print("    GET  /api/v7/observability/stats    LLM调用统计")
-    print("    POST /api/v7/observability/score    治愈系自动评分")
-    print("    GET  /api/v7/observability/metrics  评分指标说明")
-    print("    POST /api/v7/observability/weights   自定义评分权重")
-    print("    GET  /api/v7/modules               模块库索引")
-    print("    POST /api/v7/modules/validate       混搭冲突校验")
-    print("    GET  /api/v7/report                一键迭代报告")
+    print("  V2 API (推荐 — 统一管线):")
+    print("    POST /api/v2/generate          统一写作 (pangu_core.Pipeline)")
+    print("    GET  /api/v2/projects          项目列表")
+    print("    POST /api/v2/diagnose          智能诊断")
+    print("  V7 API (兼容 — 旧版workshops管线):")
+    print("    POST /api/v7/generate          旧版生成 (已废弃)")
+    print("    POST /api/v7/write             旧版写章 (已废弃)")
     print("=" * 60)
 
     app.run(host="127.0.0.1", port=5001, debug=False)

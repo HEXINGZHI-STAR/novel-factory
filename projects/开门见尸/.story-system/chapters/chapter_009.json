@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 9
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "姜渺决定不再沉默——她去找沈让坦白一切。祖上是道士，她看到的不是幻觉是遗传。对话≥35%。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 42088
+  },
+  "override_allowed": {
+    "chapter_focus": "姜渺决定不再沉默——她去找沈让坦白一切。祖上是道士，她看到的不是幻觉是遗传。对话≥35%。"
+  }
+}

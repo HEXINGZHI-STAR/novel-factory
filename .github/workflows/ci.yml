@@ -1,0 +1,79 @@
+name: PanguAI CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-mock
+
+      - name: Run unit tests
+        run: |
+          python -m pytest tests/unit/ -v --tb=short --cov=pangu_core --cov-report=xml
+
+      - name: Run integration tests (no API)
+        run: |
+          python -m pytest tests/integration/ -v --tb=short -m "not api"
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linters
+        run: pip install ruff
+
+      - name: Lint
+        run: |
+          ruff check pangu_core/ pangu_math/ pangu_analytics/ --select=E,F,W --ignore=E501
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t panguai:latest .
+
+      - name: Verify image
+        run: |
+          docker run --rm panguai:latest python -c "
+          from pangu_core.config import get_config
+          from pangu_core.pipeline import WritingPipeline
+          from pangu_math.accelerated import Vector
+          print('Image OK: all core modules importable')
+          "

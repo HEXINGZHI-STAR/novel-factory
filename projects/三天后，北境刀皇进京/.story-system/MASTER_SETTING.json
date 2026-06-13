@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "MASTER_SETTING",
+    "title": "三天后，北境刀皇进京",
+    "genre": "通用",
+    "mode": "武侠",
+    "platform": "fanqie"
+  },
+  "master_constraints": {
+    "core_tone": "平衡节奏，爽感与悬念交替",
+    "pacing_strategy": "极速节奏：300字出冲突，800字一爽点，段落1-2句，零慢热",
+    "locked_rules": []
+  },
+  "core_characters": {},
+  "active_foreshadowing": [],
+  "override_policy": {
+    "locked": [
+      "meta.genre",
+      "master_constraints.core_tone"
+    ],
+    "append_only": [
+      "active_foreshadowing"
+    ],
+    "override_allowed": [
+      "master_constraints.pacing_strategy"
+    ]
+  }
+}

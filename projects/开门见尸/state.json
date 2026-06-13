@@ -1,0 +1,360 @@
+{
+  "project_info": {
+    "title": "开门见尸",
+    "genre": "悬疑",
+    "platform": "qimao",
+    "target_words": 30000,
+    "target_chapters": 10,
+    "core_selling_points": "进入新房间看到即将发生的命案·七猫快节奏·每章一个独立案件·女主选择沉默的代价",
+    "created_at": "2026-06-12"
+  },
+  "progress": {
+    "current_chapter": 10,
+    "total_words": 47079,
+    "current_volume": 1
+  },
+  "characters": {
+    "protagonist": {
+      "name": "姜渺",
+      "current_state": "压抑能力·选择沉默",
+      "location": "江城·出租屋",
+      "last_chapter": 9
+    },
+    "key_characters": [
+      {
+        "name": "姜渺",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 5
+      },
+      {
+        "name": "沈让",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 9
+      },
+      {
+        "name": "赵秀兰",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 6
+      },
+      {
+        "name": "沈让没",
+        "role": "unknown",
+        "current_state": "",
+        "last_chapter": 7
+      }
+    ]
+  },
+  "foreshadowing": {
+    "active_threads": [
+      {
+        "id": "f001",
+        "planted_ch": 1,
+        "description": "姜渺母亲被送进精神病院的原因——她也看到过",
+        "status": "open"
+      },
+      {
+        "id": "f002",
+        "planted_ch": 1,
+        "description": "能力来源——姜渺她妈也有同样的能力",
+        "status": "open"
+      },
+      {
+        "id": "f003",
+        "planted_ch": 1,
+        "description": "每用一次眼底多一条血丝——代价在累积",
+        "status": "open"
+      },
+      {
+        "id": "f004",
+        "planted_ch": 2,
+        "description": "沈让为什么总在姜渺看房时出现",
+        "status": "open"
+      },
+      {
+        "id": "f005",
+        "planted_ch": 1,
+        "description": "自己房间窗帘被换了——预知到了自己的房间",
+        "status": "open"
+      },
+      {
+        "id": "f006",
+        "planted_ch": 4,
+        "description": "凶手知道姜渺能看到——给她留了纸条",
+        "status": "open"
+      }
+    ]
+  },
+  "setting_log": {
+    "locked_rules": []
+  },
+  "review_checkpoints": [],
+  "chapter_meta": {
+    "2": {
+      "word_count": 2429,
+      "timestamp": "2026-06-12T13:49:36.509765",
+      "mode": "悬疑"
+    },
+    "3": {
+      "word_count": 3363,
+      "timestamp": "2026-06-12T14:13:14.763392",
+      "mode": "悬疑"
+    },
+    "4": {
+      "word_count": 2120,
+      "timestamp": "2026-06-12T14:19:52.371093",
+      "mode": "悬疑"
+    },
+    "5": {
+      "word_count": 2642,
+      "timestamp": "2026-06-12T14:57:07.035899",
+      "mode": "悬疑"
+    },
+    "6": {
+      "word_count": 3464,
+      "timestamp": "2026-06-13T11:12:48.276060",
+      "mode": "悬疑"
+    },
+    "7": {
+      "word_count": 3366,
+      "timestamp": "2026-06-13T11:15:17.128529",
+      "mode": "悬疑"
+    },
+    "8": {
+      "word_count": 2886,
+      "timestamp": "2026-06-13T11:17:55.215834",
+      "mode": "悬疑"
+    },
+    "9": {
+      "word_count": 2184,
+      "timestamp": "2026-06-13T11:20:06.280326",
+      "mode": "悬疑"
+    },
+    "10": {
+      "word_count": 3039,
+      "timestamp": "2026-06-13T11:21:10.071793",
+      "mode": "悬疑"
+    }
+  },
+  "lorebook": {
+    "她不知": {
+      "description": "（待补充）她不知，在Ch3首次出现，出现3次",
+      "triggers": [
+        "她不知"
+      ],
+      "priority": 5
+    },
+    "她妈": {
+      "description": "（待补充）她妈，在Ch3首次出现，出现1次",
+      "triggers": [
+        "她妈"
+      ],
+      "priority": 5
+    },
+    "上有一": {
+      "description": "（待补充）上有一，在Ch3首次出现，出现1次",
+      "triggers": [
+        "上有一"
+      ],
+      "priority": 5
+    },
+    "她当时": {
+      "description": "（待补充）她当时，在Ch3首次出现，出现1次",
+      "triggers": [
+        "她当时"
+      ],
+      "priority": 5
+    },
+    "派出所": {
+      "description": "（待补充）派出所，在Ch3首次出现，出现1次",
+      "triggers": [
+        "派出所"
+      ],
+      "priority": 5
+    },
+    "姜渺": {
+      "description": "（待补充）姜渺，在Ch3首次出现，出现5次",
+      "triggers": [
+        "姜渺"
+      ],
+      "priority": 3
+    },
+    "你知": {
+      "description": "（待补充）你知，在Ch3首次出现，出现3次",
+      "triggers": [
+        "你知"
+      ],
+      "priority": 5
+    },
+    "怎么知": {
+      "description": "（待补充）怎么知，在Ch3首次出现，出现2次",
+      "triggers": [
+        "怎么知"
+      ],
+      "priority": 5
+    },
+    "周警官": {
+      "description": "（待补充）周警官，在Ch3首次出现，出现2次",
+      "triggers": [
+        "周警官"
+      ],
+      "priority": 5
+    },
+    "你刚才": {
+      "description": "（待补充）你刚才，在Ch3首次出现，出现2次",
+      "triggers": [
+        "你刚才"
+      ],
+      "priority": 5
+    },
+    "沈让": {
+      "description": "（待补充）沈让，在Ch4首次出现，出现2次",
+      "triggers": [
+        "沈让"
+      ],
+      "priority": 5
+    },
+    "他知": {
+      "description": "（待补充）他知，在Ch4首次出现，出现2次",
+      "triggers": [
+        "他知"
+      ],
+      "priority": 5
+    },
+    "上有几": {
+      "description": "（待补充）上有几，在Ch4首次出现，出现1次",
+      "triggers": [
+        "上有几"
+      ],
+      "priority": 5
+    },
+    "个声音": {
+      "description": "（待补充）个声音，在Ch5首次出现，出现5次",
+      "triggers": [
+        "个声音"
+      ],
+      "priority": 3
+    },
+    "咙里没": {
+      "description": "（待补充）咙里没，在Ch5首次出现，出现1次",
+      "triggers": [
+        "咙里没"
+      ],
+      "priority": 5
+    },
+    "但她知": {
+      "description": "（待补充）但她知，在Ch6首次出现，出现2次",
+      "triggers": [
+        "但她知"
+      ],
+      "priority": 5
+    },
+    "让你知": {
+      "description": "（待补充）让你知，在Ch6首次出现，出现1次",
+      "triggers": [
+        "让你知"
+      ],
+      "priority": 5
+    },
+    "着话筒": {
+      "description": "（待补充）着话筒，在Ch6首次出现，出现1次",
+      "triggers": [
+        "着话筒"
+      ],
+      "priority": 5
+    },
+    "沈让没": {
+      "description": "（待补充）沈让没，在Ch7首次出现，出现4次",
+      "triggers": [
+        "沈让没"
+      ],
+      "priority": 3
+    },
+    "如果他": {
+      "description": "（待补充）如果他，在Ch7首次出现，出现2次",
+      "triggers": [
+        "如果他"
+      ],
+      "priority": 5
+    },
+    "站在楼": {
+      "description": "（待补充）站在楼，在Ch8首次出现，出现5次",
+      "triggers": [
+        "站在楼"
+      ],
+      "priority": 3
+    },
+    "也就是": {
+      "description": "（待补充）也就是，在Ch8首次出现，出现2次",
+      "triggers": [
+        "也就是"
+      ],
+      "priority": 5
+    },
+    "不知": {
+      "description": "（待补充）不知，在Ch9首次出现，出现3次",
+      "triggers": [
+        "不知"
+      ],
+      "priority": 5
+    },
+    "的儿子": {
+      "description": "（待补充）的儿子，在Ch9首次出现，出现2次",
+      "triggers": [
+        "的儿子"
+      ],
+      "priority": 5
+    },
+    "现在的": {
+      "description": "（待补充）现在的，在Ch9首次出现，出现2次",
+      "triggers": [
+        "现在的"
+      ],
+      "priority": 5
+    },
+    "年男人": {
+      "description": "（待补充）年男人，在Ch6首次出现，出现5次",
+      "triggers": [
+        "年男人"
+      ],
+      "priority": 3
+    },
+    "我不知": {
+      "description": "（待补充）我不知，在Ch6首次出现，出现5次",
+      "triggers": [
+        "我不知"
+      ],
+      "priority": 3
+    },
+    "老太太": {
+      "description": "（待补充）老太太，在Ch5首次出现，出现5次",
+      "triggers": [
+        "老太太"
+      ],
+      "priority": 3
+    },
+    "我知": {
+      "description": "（待补充）我知，在Ch5首次出现，出现2次",
+      "triggers": [
+        "我知"
+      ],
+      "priority": 5
+    },
+    "早就知": {
+      "description": "（待补充）早就知，在Ch5首次出现，出现2次",
+      "triggers": [
+        "早就知"
+      ],
+      "priority": 5
+    },
+    "赵秀兰": {
+      "description": "（待补充）赵秀兰，在Ch6首次出现，出现14次",
+      "triggers": [
+        "赵秀兰"
+      ],
+      "priority": 3
+    }
+  }
+}

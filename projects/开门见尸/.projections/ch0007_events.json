@@ -1,0 +1,13 @@
+[
+  {
+    "event_type": "character_state_changed",
+    "trigger": "恢复",
+    "chapter": 7,
+    "context": "治吗？”沈让问。\n医生摇摇头:“如果是物理刺激，休息几天就能恢复。但如果是神经性的——”\n他顿了顿，“我建议你去做个脑部CT，排除一下颅内病变。”\n姜渺的手指收紧。",
+    "routes": [
+      "state",
+      "memory",
+      "vector"
+    ]
+  }
+]

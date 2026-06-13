@@ -1,0 +1,22 @@
+[
+  {
+    "event_type": "world_rule_revealed",
+    "trigger": "真相",
+    "chapter": 8,
+    "context": "院时自述：‘我女儿也会看到的。求你们在她来找我的时候，告诉她真相。’”\n姜渺的呼吸停住了。\n她妈知道。\n她知道她会来。\n沈让的手搭在她肩膀上，掌心很热，热得她肩膀上",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  },
+  {
+    "event_type": "artifact_obtained",
+    "trigger": "继承",
+    "chapter": 8,
+    "context": "的那些——”\n“都是债主。”赵秀兰说，“他们找到你，是因为你继承了这份能力。你看到了他们，就得帮他们。”\n“如果不帮呢？”\n赵秀兰没说话。\n她只是看着姜渺，眼睛里的",
+    "routes": [
+      "index",
+      "vector"
+    ]
+  }
+]

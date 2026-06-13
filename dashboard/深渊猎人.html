@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盘古AI Dashboard - 深渊猎人</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+        .header h1 { color: #00d2ff; font-size: 28px; margin-bottom: 5px; }
+        .header p { color: #8892b0; font-size: 13px; }
+        .header .timestamp { color: #64ffda; font-size: 12px; margin-top: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h2 { color: #00d2ff; font-size: 16px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .metric { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .metric:last-child { border-bottom: none; }
+        .metric-label { color: #8892b0; font-size: 13px; }
+        .metric-value { font-size: 22px; font-weight: 700; color: #e6f1ff; }
+        .metric-value.success { color: #64ffda; }
+        .metric-value.warning { color: #ffd166; }
+        .metric-value.danger { color: #ff6b6b; }
+        .badge {
+            display: inline-block; padding: 4px 10px; border-radius: 12px;
+            font-size: 11px; font-weight: 600;
+        }
+        .badge.success { background: rgba(100,255,218,0.15); color: #64ffda; }
+        .badge.warning { background: rgba(255,209,102,0.15); color: #ffd166; }
+        .badge.danger { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; margin-top: 8px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #00d2ff, #64ffda); border-radius: 3px; transition: width 0.3s; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; padding: 8px; background: rgba(255,255,255,0.03); color: #8892b0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+        td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; color: #ccd6f6; }
+        .section-title { color: #ccd6f6; font-size: 20px; font-weight: 700; margin: 30px 0 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>盘古AI Dashboard</h1>
+            <p>项目: 深渊猎人 | 模式: urban_power | 平台: qimao</p>
+            <p class="timestamp">生成时间: 2026-06-10 20:34:08</p>
+        </div>
+
+        <div class="section-title">核心指标</div>
+        <div class="grid">
+            <div class="card">
+                <h2>进度统计</h2>
+                <div class="metric">
+                    <span class="metric-label">已完成章节</span>
+                    <span class="metric-value">1</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">总字数</span>
+                    <span class="metric-value">3,499</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">章均字数</span>
+                    <span class="metric-value">3499</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Write Gates</h2>
+                <div class="metric">
+                    <span class="metric-label">检测报告数</span>
+                    <span class="metric-value">0</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">三层关卡</span>
+                    <span class="metric-value">prewrite/precommit/postcommit</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Story System</h2>
+                <div class="metric">
+                    <span class="metric-label">合同章节数</span>
+                    <span class="metric-value">1</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">MASTER_SETTING</span>
+                    <span class="badge success">已构建</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>长期记忆</h2>
+                <div class="metric">
+                    <span class="metric-label">Working</span>
+                    <span class="metric-value success">0</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <div class="metric">
+                    <span class="metric-label">Episodic</span>
+                    <span class="metric-value warning">0</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <div class="metric">
+                    <span class="metric-label">Semantic</span>
+                    <span class="metric-value" style="color:#a78bfa">0</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+            </div>
+
+            <div class="card">
+                <h2>RAG检索</h2>
+                <div class="metric">
+                    <span class="metric-label">检索模式</span>
+                    <span class="metric-value" style="font-size:14px">TF-IDF (char 2-4gram, numpy)</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">知识库文档数</span>
+                    <span class="metric-value">85</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">语义索引可用</span>
+                    <span class="badge danger">否</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>伏笔追踪</h2>
+                <div class="metric">
+                    <span class="metric-label">总伏笔数</span>
+                    <span class="metric-value">5</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">已埋设</span>
+                    <span class="metric-value warning">0</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">已回收</span>
+                    <span class="metric-value success">0</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+            </div>
+        </div>
+
+        <div class="section-title">人物图谱</div>
+        <div class="card">
+            <h2>核心人物 (4)</h2>
+            <table>
+                <thead><tr><th>姓名</th><th>角色</th><th>执念</th><th>底线</th></tr></thead>
+                <tbody>
+                    <tr><td>沈渊</td><td>主角</td><td></td><td></td></tr><tr><td>叶青禾</td><td>女主</td><td></td><td></td></tr><tr><td>老周</td><td>导师/情报贩子</td><td></td><td></td></tr><tr><td>顾长明</td><td>主要反派</td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">系统架构</div>
+        <div class="card">
+            <h2>Prompt注入链路 (11层)</h2>
+            <table>
+                <thead><tr><th>层级</th><th>名称</th><th>状态</th></tr></thead>
+                <tbody>
+                    <tr><td>L1</td><td>核心人设</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L2</td><td>模式数据</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L3</td><td>题材模板</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L4</td><td>情绪锚点</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L5</td><td>RAG知识检索</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L6</td><td>Lorebook</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L7</td><td>伏笔提醒</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L8</td><td>De-AI规则</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L9</td><td>模式深度注入</td><td><span class="badge success">已注入</span></td></tr>
+                    <tr><td>L10</td><td>Story Contract</td><td><span class="badge success">新增</span></td></tr>
+                    <tr><td>L11</td><td>Memory Pack</td><td><span class="badge success">新增</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align:center; padding:30px; color:#8892b0; font-size:12px;">
+            盘古AI写作系统 | webnovel-writer合并执行 | 2026-06-10 20:34:08
+        </div>
+    </div>
+</body>
+</html>

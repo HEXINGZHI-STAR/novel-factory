@@ -1,0 +1,32 @@
+[
+  {
+    "event_type": "world_rule_revealed",
+    "trigger": "秘密",
+    "chapter": 3,
+    "context": "我，你是怎么知道的？”\n姜渺闭了一下眼睛。\n她一直以为，这个秘密会跟她妈一样，烂在精神病院的走廊里。她一直以为，只要她不说，就没人会知道。她一直以为，她可以像正常人",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  },
+  {
+    "event_type": "location_changed",
+    "trigger": "离开",
+    "chapter": 3,
+    "context": "户的面杀人。而且物业有记录，钥匙是我从他们那里拿的，中间没有离开过他们的视线。”\n周警官靠在椅背上，手指在桌面上敲了两下。\n“那你告诉我，你是怎么知道的？”\n姜渺闭",
+    "routes": [
+      "state",
+      "index"
+    ]
+  },
+  {
+    "event_type": "emotional_peak",
+    "trigger": "恐惧",
+    "chapter": 3,
+    "context": "什么话但没来得及说出口。\n姜渺看着那张照片，脑子里闪过的不是恐惧。\n是确认。\n下午两点十五分，她在客厅里看到那个画面——男人坐在沙发上，胸口被穿透，血从灰色polo",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  }
+]

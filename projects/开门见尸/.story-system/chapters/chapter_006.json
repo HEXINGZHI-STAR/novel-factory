@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 6
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "姜渺去精神病院看姜兰。她终于问出了十年没问的话: 妈，你当年看到了什么？\n本章是情感核心——母女对话是本章重点(对话≥35%)。姜兰十年沉默被打破。结尾必须让读者鼻子一酸。\n章末钩子: 姜兰说的最后一句话——让姜渺意识到她的能力不是诅咒，是遗传。"
+  },
+  "dynamic_context": {
+    "recent_chapters": [],
+    "active_foreshadowing": [],
+    "total_words": 32738
+  },
+  "override_allowed": {
+    "chapter_focus": "姜渺去精神病院看姜兰。她终于问出了十年没问的话: 妈，你当年看到了什么？\n本章是情感核心——母女对话是本章重点(对话≥35%)。姜兰十年沉默被打破。结尾必须让读者鼻子一酸。\n章末钩子: 姜兰说的最后一"
+  }
+}

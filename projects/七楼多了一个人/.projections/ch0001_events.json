@@ -1,0 +1,12 @@
+[
+  {
+    "event_type": "world_rule_revealed",
+    "trigger": "规则",
+    "chapter": 1,
+    "context": "板。\n干净得像刚擦过。\n但电梯角落的地板上，有一片水渍。\n不规则的形状。\n像是——\n林远蹲下来，伸手摸了摸。\n是凉的。\n不是水。\n是血。\n他站起来，退后两步。\n对讲",
+    "routes": [
+      "memory",
+      "vector"
+    ]
+  }
+]

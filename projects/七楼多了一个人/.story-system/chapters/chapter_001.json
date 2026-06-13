@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "schema_version": "pangu-story-system/v1",
+    "contract_type": "CHAPTER_BRIEF",
+    "chapter": 1
+  },
+  "chapter_directive": {
+    "must_cover_nodes": [],
+    "forbidden_zones": [],
+    "chapter_focus": "七猫短文。林远值夜班。凌晨2:17，电梯从1楼上去，在7楼停了一下——没人进出，但轿厢里的人从5个变成了6个。他倒了三遍录像。一切正常。但那种不对劲——像电梯里多了一个不该在的人。【要求】快节奏·短段·强对话≥30%·1500-2000字·章末强钩子·段落≤3行"
+  },
+  "dynamic_context": {},
+  "override_allowed": {
+    "chapter_focus": "七猫短文。林远值夜班。凌晨2:17，电梯从1楼上去，在7楼停了一下——没人进出，但轿厢里的人从5个变成了6个。他倒了三遍录像。一切正常。但那种不对劲——像电梯里多了一个不该在的人。【要求】快节奏·短段"
+  }
+}
